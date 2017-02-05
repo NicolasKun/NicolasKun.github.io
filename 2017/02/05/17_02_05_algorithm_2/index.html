@@ -84,16 +84,28 @@
 
 
 
-<meta name="description" content="常走弯路,才会有更多支线剧情与奖励">
+<meta name="description" content="###横向滑动选择日期填充数据
+
+先贴代码
+
+1234567891011121314151617181920//设置月      Date time = Calendar.getInstance(Locale.CHINA).getTime();      int year = 1900 + time.getYear();      int month = time.getMonth();">
 <meta property="og:type" content="article">
 <meta property="og:title" content="总结自己写的小算法(二)">
 <meta property="og:url" content="http://yoursite.com/2017/02/05/17_02_05_algorithm_2/index.html">
 <meta property="og:site_name" content="菜鸡坤">
-<meta property="og:description" content="常走弯路,才会有更多支线剧情与奖励">
-<meta property="og:updated_time" content="2017-02-05T03:45:16.019Z">
+<meta property="og:description" content="###横向滑动选择日期填充数据
+
+先贴代码
+
+1234567891011121314151617181920//设置月      Date time = Calendar.getInstance(Locale.CHINA).getTime();      int year = 1900 + time.getYear();      int month = time.getMonth();">
+<meta property="og:updated_time" content="2017-02-05T04:10:04.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="总结自己写的小算法(二)">
-<meta name="twitter:description" content="常走弯路,才会有更多支线剧情与奖励">
+<meta name="twitter:description" content="###横向滑动选择日期填充数据
+
+先贴代码
+
+1234567891011121314151617181920//设置月      Date time = Calendar.getInstance(Locale.CHINA).getTime();      int year = 1900 + time.getYear();      int month = time.getMonth();">
 
 
 
@@ -311,7 +323,30 @@
       
 
       
-        
+        <p>###横向滑动选择日期填充数据</p>
+<ul>
+<li>先贴代码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//设置月</div><div class="line">      Date time = Calendar.getInstance(Locale.CHINA).getTime();</div><div class="line">      int year = 1900 + time.getYear();</div><div class="line">      int month = time.getMonth();</div><div class="line">      String currentMonth = (month + 1) + &quot;月&quot;;</div><div class="line"></div><div class="line">      //填充当月天数</div><div class="line">      int dayCountOfCurrentMonth = SelectDateUtil.getDayCountOfCurrentMonth() + 1;  //10月 31天 +1是为补当月最后一天</div><div class="line">      Calendar instance = Calendar.getInstance(Locale.CHINA);</div><div class="line">      for (int i = 0; i &lt; dayCountOfCurrentMonth; i++) &#123;</div><div class="line">          String s = (i) + &quot;&quot;;</div><div class="line">          instance.set(year, month, i);</div><div class="line">          Date time1 = instance.getTime();</div><div class="line">          String dayOfWeekFromDate = SelectDateUtil.getDayOfWeekFromDate(time1);</div><div class="line">          //Log.e(TAG, &quot;loadData: &quot; + s + &quot; -- &quot; +time1 + &quot; -- &quot; + dayOfWeekFromDate);</div><div class="line">          selectDates.add(new LPCSelectDate(s, dayOfWeekFromDate));</div><div class="line">      &#125;</div><div class="line">      selectDates.remove(0);   //移除第一位上个月的最后一天</div><div class="line">      lpcDateSelectAdapter.notifyDataSetChanged();</div></pre></td></tr></table></figure>
+<ul>
+<li><p>需求</p>
+<ul>
+<li>向横向滑动的RecycleView日历中添加数据</li>
+</ul>
+</li>
+<li><p>思路</p>
+<ul>
+<li>由Calendar类获取整个月份的总天数</li>
+<li>遍历天数并添加到集合中刷新RecycleView适配器</li>
+</ul>
+</li>
+<li>实现<ul>
+<li>见代码注释</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>
       
     </div>
 
@@ -398,8 +433,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/a3.png"
@@ -445,6 +489,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#END"><span class="nav-number">1.</span> <span class="nav-text">END</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
