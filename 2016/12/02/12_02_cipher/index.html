@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -63,62 +63,40 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="DES与RSA," />
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="DES与RSA,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
 
 
 
 
 
 
-<meta name="description" content="关于非对称加密与对称加密的资料网上随便搜搜就会有的这里就不再赘述了
-在接触前先看张流程图
-
-上图为RSA加密与后台的流程    PS: 画图就是这么diao : )
-
-RSA加密与解密
-为了加强了解 RSA密钥分为公钥和私钥 公钥可以给发给别人
-android这边可以将服务端发过来的公钥存储在assets文件夹下
-Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
+<meta name="description" content="关于非对称加密与对称加密的资料网上随便搜搜就会有的这里就不再赘述了 在接触前先看张流程图  上图为RSA加密与后台的流程    PS: 画图就是这么diao : )  RSA加密与解密 为了加强了解 RSA密钥分为公钥和私钥 公钥可以给发给别人 android这边可以将服务端发过来的公钥存储在assets文件夹下 Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
+<meta name="keywords" content="DES与RSA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对称加密与非对称加密初接触">
 <meta property="og:url" content="http://yoursite.com/2016/12/02/12_02_cipher/index.html">
 <meta property="og:site_name" content="菜鸡坤">
-<meta property="og:description" content="关于非对称加密与对称加密的资料网上随便搜搜就会有的这里就不再赘述了
-在接触前先看张流程图
-
-上图为RSA加密与后台的流程    PS: 画图就是这么diao : )
-
-RSA加密与解密
-为了加强了解 RSA密钥分为公钥和私钥 公钥可以给发给别人
-android这边可以将服务端发过来的公钥存储在assets文件夹下
-Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
+<meta property="og:description" content="关于非对称加密与对称加密的资料网上随便搜搜就会有的这里就不再赘述了 在接触前先看张流程图  上图为RSA加密与后台的流程    PS: 画图就是这么diao : )  RSA加密与解密 为了加强了解 RSA密钥分为公钥和私钥 公钥可以给发给别人 android这边可以将服务端发过来的公钥存储在assets文件夹下 Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ocgl54rby.bkt.clouddn.com/imgs/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E6%B5%81%E7%A8%8B.png">
 <meta property="og:updated_time" content="2016-12-13T01:50:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对称加密与非对称加密初接触">
-<meta name="twitter:description" content="关于非对称加密与对称加密的资料网上随便搜搜就会有的这里就不再赘述了
-在接触前先看张流程图
-
-上图为RSA加密与后台的流程    PS: 画图就是这么diao : )
-
-RSA加密与解密
-为了加强了解 RSA密钥分为公钥和私钥 公钥可以给发给别人
-android这边可以将服务端发过来的公钥存储在assets文件夹下
-Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
+<meta name="twitter:description" content="关于非对称加密与对称加密的资料网上随便搜搜就会有的这里就不再赘述了 在接触前先看张流程图  上图为RSA加密与后台的流程    PS: 画图就是这么diao : )  RSA加密与解密 为了加强了解 RSA密钥分为公钥和私钥 公钥可以给发给别人 android这边可以将服务端发过来的公钥存储在assets文件夹下 Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
 <meta name="twitter:image" content="http://ocgl54rby.bkt.clouddn.com/imgs/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E6%B5%81%E7%A8%8B.png">
 
 
@@ -147,7 +125,7 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/02/12_02_cipher/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/02/12_02_cipher/">
 
 
 
@@ -156,7 +134,7 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
   <title> 对称加密与非对称加密初接触 | 菜鸡坤 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -177,12 +155,12 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
   <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">菜鸡坤</span>
       <span class="logo-line-after"><i></i></span>
@@ -209,7 +187,7 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -219,7 +197,7 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -229,7 +207,7 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -263,18 +241,18 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/02/12_02_cipher/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <span style="display:none" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
     <meta itemprop="name" content="NicolasKun">
     <meta itemprop="description" content="">
     <meta itemprop="image" content="/images/a3.png">
   </span>
 
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+  <span style="display:none" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="菜鸡坤">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+    <span style="display:none" itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
       <img style="display:none;" itemprop="url image" alt="菜鸡坤" src="">
     </span>
   </span>
@@ -346,29 +324,29 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
 <li>为了加强了解 RSA密钥分为公钥和私钥 公钥可以给发给别人</li>
 <li>android这边可以将服务端发过来的公钥存储在assets文件夹下</li>
 <li>Cipher类初始化需要声明transformation这里我们固定写RSA/ECB/PKCS1PADDING (为加密数据附加一段随机数)<h4 id="读取公钥"><a href="#读取公钥" class="headerlink" title="读取公钥"></a>读取公钥</h4></li>
-<li>由公钥文件获取PublicKey对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public static PublicKey getPublicKeyFromFile(InputStream bais) &#123;</div><div class="line">    PublicKey puk = null;</div><div class="line">    try &#123;</div><div class="line">        CertificateFactory certificatefactory = CertificateFactory</div><div class="line">                .getInstance(&quot;X509&quot;);</div><div class="line">        Certificate cert = certificatefactory.generateCertificate(bais);</div><div class="line"></div><div class="line">        bais.close();</div><div class="line">        puk = cert.getPublicKey();</div><div class="line">        Log.e(TAG, &quot;getPublicKeyFromFile: &quot; + puk);</div><div class="line">        return puk;</div><div class="line">    &#125; catch (Exception e) &#123;</div><div class="line">        Log.e(TAG, &quot;getPublicKeyFromFile: 异常 &quot; + e.getMessage());</div><div class="line">        return puk;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>由公钥文件获取PublicKey对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static PublicKey getPublicKeyFromFile(InputStream bais) &#123;</span><br><span class="line">    PublicKey puk = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        CertificateFactory certificatefactory = CertificateFactory</span><br><span class="line">                .getInstance(&quot;X509&quot;);</span><br><span class="line">        Certificate cert = certificatefactory.generateCertificate(bais);</span><br><span class="line"></span><br><span class="line">        bais.close();</span><br><span class="line">        puk = cert.getPublicKey();</span><br><span class="line">        Log.e(TAG, &quot;getPublicKeyFromFile: &quot; + puk);</span><br><span class="line">        return puk;</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        Log.e(TAG, &quot;getPublicKeyFromFile: 异常 &quot; + e.getMessage());</span><br><span class="line">        return puk;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h4><ul>
-<li>实际上加密只需要初始化Cipher并doFinal即可 但查资料得知公钥加密每次程度不能超过一定长度 所以需要对数据进行分段加密并进行Base64编码  详细代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">public static String sPubEncrypt(String str,PublicKey publicKey)&#123;</div><div class="line">    String encode = &quot;&quot;;</div><div class="line">    try &#123;</div><div class="line">        Log.e(TAG, &quot;sPubEncrypt: &quot; + publicKey);</div><div class="line">        //实例化加密类</div><div class="line">        Cipher cipher = Cipher.getInstance(RSATYPE, new BouncyCastleProvider());</div><div class="line">        //取得明文的二进制</div><div class="line">        byte[] plainText = str.getBytes();</div><div class="line">        //加密</div><div class="line">        cipher.init(Cipher.ENCRYPT_MODE,publicKey);</div><div class="line"></div><div class="line">        // 对数据分段加密</div><div class="line">        int inputLen = plainText.length;</div><div class="line">        ByteArrayOutputStream out = new ByteArrayOutputStream();</div><div class="line">        int offSet = 0;</div><div class="line">        byte[] cache;</div><div class="line">        int i = 0;</div><div class="line">        while (inputLen - offSet &gt; 0) &#123;</div><div class="line">            if (inputLen - offSet &gt; MAX_ENCRYPT_BLOCK) &#123;</div><div class="line">                cache = cipher.doFinal(plainText, offSet, MAX_ENCRYPT_BLOCK);</div><div class="line">            &#125; else &#123;</div><div class="line">                cache = cipher.doFinal(plainText, offSet, inputLen - offSet);</div><div class="line">            &#125;</div><div class="line">            out.write(cache, 0, cache.length);</div><div class="line">            i++;</div><div class="line">            offSet = i * MAX_ENCRYPT_BLOCK;</div><div class="line">        &#125;</div><div class="line">        byte[] encryptedData = out.toByteArray();</div><div class="line">        out.close();</div><div class="line"></div><div class="line">        encode = Base64.encode(encryptedData);</div><div class="line">    &#125; catch (Exception e) &#123;</div><div class="line">        Log.e(TAG, &quot;sPubEncrypt: 加密异常 &quot; + e.getMessage());</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125; finally &#123;</div><div class="line">        return encode;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>实际上加密只需要初始化Cipher并doFinal即可 但查资料得知公钥加密每次程度不能超过一定长度 所以需要对数据进行分段加密并进行Base64编码  详细代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public static String sPubEncrypt(String str,PublicKey publicKey)&#123;</span><br><span class="line">    String encode = &quot;&quot;;</span><br><span class="line">    try &#123;</span><br><span class="line">        Log.e(TAG, &quot;sPubEncrypt: &quot; + publicKey);</span><br><span class="line">        //实例化加密类</span><br><span class="line">        Cipher cipher = Cipher.getInstance(RSATYPE, new BouncyCastleProvider());</span><br><span class="line">        //取得明文的二进制</span><br><span class="line">        byte[] plainText = str.getBytes();</span><br><span class="line">        //加密</span><br><span class="line">        cipher.init(Cipher.ENCRYPT_MODE,publicKey);</span><br><span class="line"></span><br><span class="line">        // 对数据分段加密</span><br><span class="line">        int inputLen = plainText.length;</span><br><span class="line">        ByteArrayOutputStream out = new ByteArrayOutputStream();</span><br><span class="line">        int offSet = 0;</span><br><span class="line">        byte[] cache;</span><br><span class="line">        int i = 0;</span><br><span class="line">        while (inputLen - offSet &gt; 0) &#123;</span><br><span class="line">            if (inputLen - offSet &gt; MAX_ENCRYPT_BLOCK) &#123;</span><br><span class="line">                cache = cipher.doFinal(plainText, offSet, MAX_ENCRYPT_BLOCK);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                cache = cipher.doFinal(plainText, offSet, inputLen - offSet);</span><br><span class="line">            &#125;</span><br><span class="line">            out.write(cache, 0, cache.length);</span><br><span class="line">            i++;</span><br><span class="line">            offSet = i * MAX_ENCRYPT_BLOCK;</span><br><span class="line">        &#125;</span><br><span class="line">        byte[] encryptedData = out.toByteArray();</span><br><span class="line">        out.close();</span><br><span class="line"></span><br><span class="line">        encode = Base64.encode(encryptedData);</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        Log.e(TAG, &quot;sPubEncrypt: 加密异常 &quot; + e.getMessage());</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">        return encode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h4><ul>
-<li>同理也是使用Cipher解密  只不过初始化参数换成了DECRYPT_MODE<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public String cPubDecrypt(String encString)&#123;</div><div class="line">    Cipher cipher = null;</div><div class="line">    String strDecrypt = null;</div><div class="line">    try &#123;</div><div class="line">        cipher = Cipher.getInstance(RSATYPE);</div><div class="line">        cipher.init(Cipher.DECRYPT_MODE,mPublicKey);</div><div class="line">        //先将转为Base64编码的加密后数据转化为Byte数组</div><div class="line">        byte[] enBytes = base64Dec(encString);</div><div class="line">        //解密为byte数组，应该为字符串数组，最后转化为字符串</div><div class="line">        byte[] deBytes = cipher.doFinal(enBytes);</div><div class="line">        strDecrypt = new String(deBytes);</div><div class="line">    &#125; catch (Exception e) &#123;</div><div class="line">        Log.e(TAG, &quot;cPubDecrypt: &quot; + e.getMessage());</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;finally &#123;</div><div class="line">        return strDecrypt;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>同理也是使用Cipher解密  只不过初始化参数换成了DECRYPT_MODE<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public String cPubDecrypt(String encString)&#123;</span><br><span class="line">    Cipher cipher = null;</span><br><span class="line">    String strDecrypt = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        cipher = Cipher.getInstance(RSATYPE);</span><br><span class="line">        cipher.init(Cipher.DECRYPT_MODE,mPublicKey);</span><br><span class="line">        //先将转为Base64编码的加密后数据转化为Byte数组</span><br><span class="line">        byte[] enBytes = base64Dec(encString);</span><br><span class="line">        //解密为byte数组，应该为字符串数组，最后转化为字符串</span><br><span class="line">        byte[] deBytes = cipher.doFinal(enBytes);</span><br><span class="line">        strDecrypt = new String(deBytes);</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        Log.e(TAG, &quot;cPubDecrypt: &quot; + e.getMessage());</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;finally &#123;</span><br><span class="line">        return strDecrypt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="DES加密与解密"><a href="#DES加密与解密" class="headerlink" title="DES加密与解密"></a>DES加密与解密</h3><ul>
 <li>相比RSA  DES要简单不少</li>
 <li>因为是对称加密 所以仅需一对密钥即可<h4 id="获取密钥"><a href="#获取密钥" class="headerlink" title="获取密钥"></a>获取密钥</h4></li>
-<li>将服务端传来的DES密钥保存在本地即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public static SecretKey getKey(String strKey) throws Exception &#123;</div><div class="line">		DESKeySpec desKeySpec = new DESKeySpec(strKey.getBytes());</div><div class="line">		SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(DES);</div><div class="line">		SecretKey sk = keyFactory.generateSecret(desKeySpec);</div><div class="line">		return sk;</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<li>将服务端传来的DES密钥保存在本地即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static SecretKey getKey(String strKey) throws Exception &#123;</span><br><span class="line">		DESKeySpec desKeySpec = new DESKeySpec(strKey.getBytes());</span><br><span class="line">		SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(DES);</span><br><span class="line">		SecretKey sk = keyFactory.generateSecret(desKeySpec);</span><br><span class="line">		return sk;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="加密-1"><a href="#加密-1" class="headerlink" title="加密"></a>加密</h4><ul>
-<li>同样是用到了Cipher<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public static byte[] doEncrypt(byte[] data, Key key, String type)</div><div class="line">    throws Exception &#123;</div><div class="line">  Cipher cipher = Cipher.getInstance(type);</div><div class="line">  cipher.init(Cipher.ENCRYPT_MODE, key);</div><div class="line">  return cipher.doFinal(data);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>同样是用到了Cipher<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static byte[] doEncrypt(byte[] data, Key key, String type)</span><br><span class="line">    throws Exception &#123;</span><br><span class="line">  Cipher cipher = Cipher.getInstance(type);</span><br><span class="line">  cipher.init(Cipher.ENCRYPT_MODE, key);</span><br><span class="line">  return cipher.doFinal(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="解密-1"><a href="#解密-1" class="headerlink" title="解密"></a>解密</h4><ul>
-<li>初始化Cipher参数换成了DECRYPT_MODE<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public static byte[] doDecrypt(byte[] data, Key key, String type)</div><div class="line">    throws Exception &#123;</div><div class="line">  Cipher cipher = Cipher.getInstance(type);</div><div class="line">  cipher.init(Cipher.DECRYPT_MODE, key);</div><div class="line">  return cipher.doFinal(data);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>初始化Cipher参数换成了DECRYPT_MODE<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static byte[] doDecrypt(byte[] data, Key key, String type)</span><br><span class="line">    throws Exception &#123;</span><br><span class="line">  Cipher cipher = Cipher.getInstance(type);</span><br><span class="line">  cipher.init(Cipher.DECRYPT_MODE, key);</span><br><span class="line">  return cipher.doFinal(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -376,7 +354,7 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
 <h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><ul>
 <li>RSA不能被服务器的私钥解密的几点猜想</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">影响因素</div><div class="line">publicKey源文件</div><div class="line">publicKey对象</div><div class="line">key中modulus开头00</div><div class="line">Base64编码</div><div class="line">文件类型(*.pem *.der)</div><div class="line">Cipher初始值</div><div class="line"></div><div class="line">排除</div><div class="line">多个Base64编码结果相同</div><div class="line">文件类型</div><div class="line">源文件</div><div class="line">00为补位</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">影响因素</span><br><span class="line">publicKey源文件</span><br><span class="line">publicKey对象</span><br><span class="line">key中modulus开头00</span><br><span class="line">Base64编码</span><br><span class="line">文件类型(*.pem *.der)</span><br><span class="line">Cipher初始值</span><br><span class="line"></span><br><span class="line">排除</span><br><span class="line">多个Base64编码结果相同</span><br><span class="line">文件类型</span><br><span class="line">源文件</span><br><span class="line">00为补位</span><br></pre></td></tr></table></figure>
 <hr>
 <h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3>
       
@@ -470,7 +448,7 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -480,10 +458,8 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/a3.png"
-               alt="NicolasKun" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/a3.png" alt="NicolasKun">
           <p class="site-author-name" itemprop="name">NicolasKun</p>
           <p class="site-description motion-element" itemprop="description">常走弯路,才会有更多支线剧情与奖励</p>
         </div>
@@ -553,7 +529,7 @@ Cipher类初始化需要声明transformation这里我们固定写RSA/ECB">
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
   <span itemprop="copyrightYear">2018</span>
