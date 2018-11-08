@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2016 | 菜鸡坤</title>
+  <title>在CentOS7上安装Python3.7.1 | 菜鸡坤</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常走弯路,才会有更多支线剧情与奖励">
-<meta property="og:type" content="website">
-<meta property="og:title" content="菜鸡坤">
-<meta property="og:url" content="http://yoursite.com/archives/2016/index.html">
+  <meta name="description" content="目前(2018-11-08)为止yum上还没有python3.7的安装包 所以现在使用源码进行安装   首先安装编译使用的依赖包   python3.7需要依赖libffi-devel不然会报错找不到_ctypes模块 有关讨论点这里  1# yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-deve">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在CentOS7上安装Python3.7.1">
+<meta property="og:url" content="http://yoursite.com/2018/11/08/181108_Install_Python3.7_on_CentOS7/index.html">
 <meta property="og:site_name" content="菜鸡坤">
-<meta property="og:description" content="常走弯路,才会有更多支线剧情与奖励">
+<meta property="og:description" content="目前(2018-11-08)为止yum上还没有python3.7的安装包 所以现在使用源码进行安装   首先安装编译使用的依赖包   python3.7需要依赖libffi-devel不然会报错找不到_ctypes模块 有关讨论点这里  1# yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-deve">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-08T07:31:52.653Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="菜鸡坤">
-<meta name="twitter:description" content="常走弯路,才会有更多支线剧情与奖励">
+<meta name="twitter:title" content="在CentOS7上安装Python3.7.1">
+<meta name="twitter:description" content="目前(2018-11-08)为止yum上还没有python3.7的安装包 所以现在使用源码进行安装   首先安装编译使用的依赖包   python3.7需要依赖libffi-devel不然会报错找不到_ctypes模块 有关讨论点这里  1# yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-deve">
   
     <link rel="alternative" href="/atom.xml" title="菜鸡坤" type="application/atom+xml">
   
@@ -145,114 +146,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-181108_Install_Python3.7_on_CentOS7" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在CentOS7上安装Python3.7.1
+    </h1>
+  
+
+        
+        <a href="/2018/11/08/181108_Install_Python3.7_on_CentOS7/" class="archive-article-date">
+  	<time datetime="2018-11-08T07:12:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-08</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>目前(2018-11-08)为止yum上还没有python3.7的安装包 所以现在使用源码进行安装</p>
+</blockquote>
+<ul>
+<li>首先安装编译使用的依赖包</li>
+</ul>
+<blockquote>
+<p>python3.7需要依赖libffi-devel不然会报错找不到_ctypes模块 有关讨论<a href="https://github.com/pyenv/pyenv/issues/1183" target="_blank" rel="noopener">点这里</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用wget下载源码包 </li>
+</ul>
+<blockquote>
+<p>查询python源码最新版本 <a href="https://www.python.org/ftp/python/" target="_blank" rel="noopener">点这里</a>     </p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>由于众所周知的原因 下载太慢就把源码包通过某种方式下载下来 然后ftp传到服务器上</p>
+</blockquote>
+<ul>
+<li>解压缩并编译源码</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> tar -zxvf Python-3.7.1.tgz</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> cd Python-3.7.1.tgz</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> ./configure prefix=/usr/local/python3</span><br><span class="line"><span class="meta">#</span> make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加Python和pip软连接 这样全局使用方便些</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ln -s /usr/local/python3/bin/python3.7 /bin/python3</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> ln -s /usr/local/pip3.7 /bin/pip3</span><br></pre></td></tr></table></figure>
+<ul>
+<li>试一下安装是否成功</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> python3 -V</span><br></pre></td></tr></table></figure>
+<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/02/12_02_cipher/" class="archive-article-date">
-  	<time datetime="2016-12-02T09:25:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/02/12_02_cipher/">对称加密与非对称加密初接触</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DES与RSA</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/08/181108_Install_Python3.7_on_CentOS7/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/02/11_28_custom_jc_2/" class="archive-article-date">
-  	<time datetime="2016-12-02T08:21:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/10/24/181024-edit-excel-with-python/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python中使用openpyxl操作excel</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/02/11_28_custom_jc_2/">自定义节操视频播放界面(二)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/23/11_23_custom_jc/" class="archive-article-date">
-  	<time datetime="2016-11-23T01:34:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/23/11_23_custom_jc/">自定义节操视频播放界面(一)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -275,8 +328,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
