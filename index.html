@@ -147,6 +147,161 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-git_usually_commands" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/09/git_usually_commands/">Git常用命令整理</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/09/git_usually_commands/" class="archive-article-date">
+  	<time datetime="2018-11-09T06:37:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><ul>
+<li>初始化本地仓库</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置自己的联系方式(最好设置一下 团队合作时需要知道是谁做的变动</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config global user.email &quot;my.email@xxx.xx&quot;</span><br><span class="line"></span><br><span class="line">$ git config global user.name &quot;myname&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查询当前目录状态</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加到本地缓存区(添加全部</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
+<ul>
+<li>提交到本地仓库</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;my commit message&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>初始设置远程仓库地址</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@x.x.x.x:xxx.git</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果服务端ssh默认端口不是22</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add origin git@x.x.x.x:xx/~/x/xxx.git</span><br></pre></td></tr></table></figure>
+<ul>
+<li>改变远程仓库地址</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote set-url origin git@x.x.x.x:xxx.git</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>若服务端ssh默认端口不是22参照上条</p>
+</blockquote>
+<ul>
+<li>拉取远程分支并合并到本地</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; git pull origin master</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> 实例中master为默认主分支</p>
+<p> git pull相当于git merge和git fetch</p>
+</blockquote>
+<ul>
+<li>推送本地分支到远程分支</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>实例中master为默认主分支</p>
+</blockquote>
+<ul>
+<li>查看当前仓库中的详细操作日志 与 简略日志</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git log </span><br><span class="line"></span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看分支与创建一个新的分支</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line"></span><br><span class="line">$ git branch xxx</span><br></pre></td></tr></table></figure>
+<ul>
+<li>切换到其他分支</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout xxx</span><br></pre></td></tr></table></figure>
+<h2 id="服务端-root-on-CentOS-7"><a href="#服务端-root-on-CentOS-7" class="headerlink" title="服务端 (root on CentOS 7"></a>服务端 (root on CentOS 7</h2><ul>
+<li><p>安装git</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> yum install -y git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加git用户</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> useradd git</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置git用户登录权限</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> vi /etc/passwd</span><br><span class="line"></span><br><span class="line">找到</span><br><span class="line">git:x:500:500::/home/git:/bin/bash</span><br><span class="line">改为 ↓</span><br><span class="line">git:x:1000:1000::/home/git:/usr/bin/git-shell</span><br></pre></td></tr></table></figure>
+<ul>
+<li>新建一个仓库</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> git init --bare xxx.git</span><br></pre></td></tr></table></figure>
+<ul>
+<li>提权</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> chown -R git:git xxx.git</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>接下来在本地git client测试一下就好</p>
+</blockquote>
+<h4 id="设置公钥登录"><a href="#设置公钥登录" class="headerlink" title="设置公钥登录"></a>设置公钥登录</h4><h5 id="客户端-Microsoft-Windows"><a href="#客户端-Microsoft-Windows" class="headerlink" title="客户端 (Microsoft Windows)"></a>客户端 (Microsoft Windows)</h5><blockquote>
+<p>找到用户目录下的.ssh/id_rsa.pub将其中内容复制给服务端</p>
+<p>没有该文件或文件夹的话在git bash客户端执行如下命令</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh key-gen</span><br></pre></td></tr></table></figure>
+<h5 id="服务端-root-on-CentOS-7-1"><a href="#服务端-root-on-CentOS-7-1" class="headerlink" title="服务端 (root on CentOS 7"></a>服务端 (root on CentOS 7</h5><blockquote>
+<p>拿到客户端公钥在如下文件中<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```Shell</span><br><span class="line"># vi /home/git/.ssh/authorized_keys</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/09/git_usually_commands/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-181108_Install_Python3.7_on_CentOS7" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1006,15 +1161,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DES与RSA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
