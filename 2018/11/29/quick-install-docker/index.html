@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python中使用openpyxl操作excel | 菜鸡坤</title>
+  <title>quick_install_docker.md | &#x83DC;&#x9E21;&#x5764;</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用pip安装openpyxl 1pip install openpyxl  初始化Workbook 并且激活一张工作簿 12wb = WorkBook()bookSheet = wb.active  向工作簿中用list填充一行数据 1bookSheet.append([&quot;A1&quot;, &quot;B1&quot;, &quot;C1&quot;, &quot;D1&quot;])  保存该工作簿 默认保存到当前程序目录下 1wb.save(&quot;name.x">
+  <meta name="description" content="&amp;#x5FEB;&amp;#x901F;&amp;#x5728;Linux&amp;#x4E0A;&amp;#x5B89;&amp;#x88C5;Docker &amp;#x672C;&amp;#x4F8B;&amp;#x5728;CentOS 7&amp;#x4E0A;&amp;#x6F14;&amp;#x793A;  &amp;#x672C;&amp;#x7740;&amp;#x5077;&amp;#x61D2; &amp;#x7684;&amp;#x539F;&amp;#x5219;&amp;#x5FEB;&amp;#x901F;&amp;#x5B89;&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python中使用openpyxl操作excel">
-<meta property="og:url" content="http://yoursite.com/2018/10/24/181024-edit-excel-with-python/index.html">
-<meta property="og:site_name" content="菜鸡坤">
-<meta property="og:description" content="使用pip安装openpyxl 1pip install openpyxl  初始化Workbook 并且激活一张工作簿 12wb = WorkBook()bookSheet = wb.active  向工作簿中用list填充一行数据 1bookSheet.append([&quot;A1&quot;, &quot;B1&quot;, &quot;C1&quot;, &quot;D1&quot;])  保存该工作簿 默认保存到当前程序目录下 1wb.save(&quot;name.x">
+<meta property="og:title" content="quick_install_docker.md">
+<meta property="og:url" content="http://yoursite.com/2018/11/29/quick-install-docker/index.html">
+<meta property="og:site_name" content="&#x83DC;&#x9E21;&#x5764;">
+<meta property="og:description" content="&amp;#x5FEB;&amp;#x901F;&amp;#x5728;Linux&amp;#x4E0A;&amp;#x5B89;&amp;#x88C5;Docker &amp;#x672C;&amp;#x4F8B;&amp;#x5728;CentOS 7&amp;#x4E0A;&amp;#x6F14;&amp;#x793A;  &amp;#x672C;&amp;#x7740;&amp;#x5077;&amp;#x61D2; &amp;#x7684;&amp;#x539F;&amp;#x5219;&amp;#x5FEB;&amp;#x901F;&amp;#x5B89;&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-24T09:29:46.163Z">
+<meta property="og:updated_time" content="2018-11-29T06:15:18.412Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python中使用openpyxl操作excel">
-<meta name="twitter:description" content="使用pip安装openpyxl 1pip install openpyxl  初始化Workbook 并且激活一张工作簿 12wb = WorkBook()bookSheet = wb.active  向工作簿中用list填充一行数据 1bookSheet.append([&quot;A1&quot;, &quot;B1&quot;, &quot;C1&quot;, &quot;D1&quot;])  保存该工作簿 默认保存到当前程序目录下 1wb.save(&quot;name.x">
+<meta name="twitter:title" content="quick_install_docker.md">
+<meta name="twitter:description" content="&amp;#x5FEB;&amp;#x901F;&amp;#x5728;Linux&amp;#x4E0A;&amp;#x5B89;&amp;#x88C5;Docker &amp;#x672C;&amp;#x4F8B;&amp;#x5728;CentOS 7&amp;#x4E0A;&amp;#x6F14;&amp;#x793A;  &amp;#x672C;&amp;#x7740;&amp;#x5077;&amp;#x61D2; &amp;#x7684;&amp;#x539F;&amp;#x5219;&amp;#x5FEB;&amp;#x901F;&amp;#x5B89;&amp;">
   
-    <link rel="alternative" href="/atom.xml" title="菜鸡坤" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="&#x83DC;&#x9E21;&#x5764;" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -36,7 +36,30 @@
 
   
 
-</head>
+<style type="text/css">span.spoiler {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    text-shadow: grey 0px 0px 10px;
+    cursor: pointer;
+    -webkit-transition: text-shadow .5s ease;
+       -moz-transition: text-shadow .5s ease;
+            transition: text-shadow .5s ease;
+}
+span.spoiler:hover {
+    text-shadow: grey 0px 0px 5px;
+}
+span.spoiler.revealed {
+    text-shadow: grey 0px 0px 0px;
+}
+</style><script type="text/javascript">window.addEventListener("load", function(){
+    var spoiler = document.getElementsByClassName("spoiler");
+    for(var i = 0; i < spoiler.length; ++i) {
+        spoiler[i].addEventListener("click", function() {
+            this.classList.toggle("revealed");
+        });
+    }
+});
+</script></head>
 </html>
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -57,24 +80,24 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="/">&#x4E3B;&#x9875;</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/tags/&#x968F;&#x7B14;/">&#x968F;&#x7B14;</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, &apos;innerArchive&apos;)" href="javascript:void(0)">&#x6240;&#x6709;&#x6587;&#x7AE0;</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			<a q-on="click: openSlider(e, &apos;friends&apos;)" href="javascript:void(0)">&#x53CB;&#x94FE;</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, &apos;aboutme&apos;)" href="javascript:void(0)">&#x5173;&#x4E8E;&#x6211;</a>
     			
             
 		</nav>
@@ -129,9 +152,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">&#x4E3B;&#x9875;</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/tags/&#x968F;&#x7B14;/">&#x968F;&#x7B14;</a></li>
 		        
 				</ul>
 			</nav>
@@ -143,43 +166,57 @@
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
           <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+            <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-181024-edit-excel-with-python" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-quick-install-docker" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python中使用openpyxl操作excel
+      quick_install_docker.md
     </h1>
   
 
         
-        <a href="/2018/10/24/181024-edit-excel-with-python/" class="archive-article-date">
-  	<time datetime="2018-10-24T08:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
+        <a href="/2018/11/29/quick-install-docker/" class="archive-article-date">
+  	<time datetime="2018-11-28T17:14:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>使用pip安装openpyxl</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install openpyxl</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化Workbook 并且激活一张工作簿</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wb = WorkBook()</span><br><span class="line">bookSheet = wb.active</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>向工作簿中用list填充一行数据</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bookSheet.append([<span class="string">"A1"</span>, <span class="string">"B1"</span>, <span class="string">"C1"</span>, <span class="string">"D1"</span>])</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>保存该工作簿 默认保存到当前程序目录下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wb.save(<span class="string">"name.xlsx"</span>)</span><br></pre></td></tr></table></figure></li>
+        <h2 id="&#x5FEB;&#x901F;&#x5728;Linux&#x4E0A;&#x5B89;&#x88C5;Docker"><a href="#&#x5FEB;&#x901F;&#x5728;Linux&#x4E0A;&#x5B89;&#x88C5;Docker" class="headerlink" title="&#x5FEB;&#x901F;&#x5728;Linux&#x4E0A;&#x5B89;&#x88C5;Docker"></a>&#x5FEB;&#x901F;&#x5728;Linux&#x4E0A;&#x5B89;&#x88C5;Docker</h2><blockquote>
+<p>&#x672C;&#x4F8B;&#x5728;CentOS 7&#x4E0A;&#x6F14;&#x793A;</p>
+</blockquote>
+<p>&#x672C;&#x7740;<span class="spoiler">&#x5077;&#x61D2;
+</span>&#x7684;&#x539F;&#x5219;&#x5FEB;&#x901F;&#x5B89;&#x88C5;docker<br>&#x627E;&#x5230;&#x4E86;&#x5B98;&#x65B9;&#x5B89;&#x88C5;&#x811A;&#x672C;<br>&#x4E00;&#x952E;&#x89E3;&#x51B3;</p>
+<ul>
+<li>&#x5B89;&#x88C5;</li>
 </ul>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> wget -qO- get.docker.com | bash</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;wget&#x5148;&#x7528;yum&#x88C5;&#x4E00;&#x4E0B;</p>
+</blockquote>
+<ul>
+<li>&#x542F;&#x52A8;docker&#x670D;&#x52A1;</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> systemctl start docker</span><br></pre></td></tr></table></figure>
+<ul>
+<li>&#x8BBE;&#x7F6E;&#x5F00;&#x673A;&#x542F;&#x52A8;</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> systemctl enable docker</span><br></pre></td></tr></table></figure>
+<ul>
+<li>&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> docker run hello-world</span><br></pre></td></tr></table></figure>
+<p>&#x8F93;&#x51FA;<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Unable to find image &apos;hello-world:latest&apos; locally</span><br><span class="line">latest: Pulling from library/hello-world</span><br><span class="line">d1725b59e92d: Pull complete </span><br><span class="line">Digest: sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788</span><br><span class="line">Status: Downloaded newer image for hello-world:latest</span><br><span class="line"></span><br><span class="line">Hello from Docker!</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x662F;&#x5FEB;&#x901F;&#x5B89;&#x88C5;docker&#x7684;&#x8FC7;&#x7A0B;&#x4E86; :P</p>
+<p>Enjoy it!</p>
+<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3>
       
 
       
@@ -235,9 +272,9 @@
 
 <div class="page-modal wx-share js-wx-box">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
+    <p>&#x626B;&#x4E00;&#x626B;&#xFF0C;&#x5206;&#x4EAB;&#x5230;&#x5FAE;&#x4FE1;</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/10/24/181024-edit-excel-with-python/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/29/quick-install-docker/" alt="&#x5FAE;&#x4FE1;&#x5206;&#x4EAB;&#x4E8C;&#x7EF4;&#x7801;">
     </div>
 </div>
 
@@ -251,18 +288,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/08/181108_Install_Python3.7_on_CentOS7/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          在CentOS7上安装Python3.7.1
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/10/24/17_02_05_algorithm_2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">总结自己写的小算法(二)</div>
+    <a href="/2018/11/28/shell_script_launch_exception/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Shell&#x811A;&#x672C;&#x5728;CentOS7&#x4E0A;&#x6267;&#x884C;&#x5F02;&#x5E38;&#x7684;&#x95EE;&#x9898;</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -307,9 +335,9 @@
   <div class="outer">
     <div id="footer-info">
     	<span class="footer-left">
-    		&copy; 2018 NicolasKun
+    		&#xA9; 2018 NicolasKun
 			<span id="busuanzi_container_site_pv">
-				已经有<span id="busuanzi_value_site_pv"></span>位小伙伴来过
+				&#x5DF2;&#x7ECF;&#x6709;<span id="busuanzi_value_site_pv"></span>&#x4F4D;&#x5C0F;&#x4F19;&#x4F34;&#x6765;&#x8FC7;
 			</span>
     	</span>
       	<div class="footer-right">
@@ -364,15 +392,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, &apos;innerArchive&apos;)"><a href="javascript:void(0)" q-class="active:innerArchive">&#x6240;&#x6709;&#x6587;&#x7AE0;</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, &apos;friends&apos;)"><a href="javascript:void(0)" q-class="active:friends">&#x53CB;&#x94FE;</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, &apos;aboutme&apos;)"><a href="javascript:void(0)" q-class="active:aboutme">&#x5173;&#x4E8E;&#x6211;</a></li>
       
         
     </ul>
@@ -381,7 +409,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-all" q-show="innerArchive">
         <div class="search-wrap">
-          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something&#x2026;">
           <i class="icon-search icon" q-show="search|isEmptyStr"></i>
           <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
         </div>
@@ -393,15 +421,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">DES&#x4E0E;RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+                <a href="javascript:void(0)" class="js-tag color3">&#x7B97;&#x6CD5;</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DES与RSA</a>
+                <a href="javascript:void(0)" class="js-tag color3">&#x6742;&#x8BB0;</a>
               </li>
             
             <div class="clearfix"></div>
@@ -409,8 +437,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
-            3、在根目录_config.yml里添加配置：
+            &#x7F3A;&#x5931;&#x6A21;&#x5757;&#x3002;<br>1&#x3001;&#x8BF7;&#x786E;&#x4FDD;node&#x7248;&#x672C;&#x5927;&#x4E8E;6.2<br>2&#x3001;&#x5728;&#x535A;&#x5BA2;&#x6839;&#x76EE;&#x5F55;&#xFF08;&#x6CE8;&#x610F;&#x4E0D;&#x662F;yilia&#x6839;&#x76EE;&#x5F55;&#xFF09;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;<br> npm i hexo-generator-json-content --save<br><br>
+            3&#x3001;&#x5728;&#x6839;&#x76EE;&#x5F55;_config.yml&#x91CC;&#x6DFB;&#x52A0;&#x914D;&#x7F6E;&#xFF1A;
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
     meta: false
@@ -453,11 +481,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="https://github.com/linyingfa" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>&#x53D1;&#x4ED4;</a>
             </li>
           
         </ul>
@@ -468,7 +492,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">巧妙遇到了了所有Bug/纲丝/火星哥</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&#x5DE7;&#x5999;&#x9047;&#x5230;&#x4E86;&#x4E86;&#x6240;&#x6709;Bug/&#x7EB2;&#x4E1D;/&#x706B;&#x661F;&#x54E5;</div>
   	  	
     	</section>
     
@@ -543,4 +567,3 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 </div>
   </div>
 </body>
-</html>

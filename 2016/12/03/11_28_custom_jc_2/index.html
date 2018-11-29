@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>quick_install_docker.md | 菜鸡坤</title>
+  <title>自定义节操视频播放界面(二) | 菜鸡坤</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="快速在Linux上安装Docker 本例在CentOS 7上演示  本着偷懒的原则快速安装docker找到了官方安装脚本一键解决  安装  1# wget -qO- get.docker.com | bash  如果没有wget先用yum装一下   启动docker服务  1# systemctl start docker  设置开机启动  1# systemctl enable docker">
+  <meta name="description" content="CustomJCVideo需求 预览 视频播放完成后显示某些东西  思路 找到更新seekBar的源头并进行监听 上一篇有说因是Gradle管理jar包  所以我们无法修改源码 而通读JCVideoPlayer源码  我悲催的发现并没有关于监听播放进度的实现 接下来就要自己整了 : )  实现 首先我们需要去这里下载源码并以依赖库的形式导入项目 接着我们打开JCVideoPlayer找到 1234">
 <meta property="og:type" content="article">
-<meta property="og:title" content="quick_install_docker.md">
-<meta property="og:url" content="http://yoursite.com/2018/11/28/quick-install-docker/index.html">
+<meta property="og:title" content="自定义节操视频播放界面(二)">
+<meta property="og:url" content="http://yoursite.com/2016/12/03/11_28_custom_jc_2/index.html">
 <meta property="og:site_name" content="菜鸡坤">
-<meta property="og:description" content="快速在Linux上安装Docker 本例在CentOS 7上演示  本着偷懒的原则快速安装docker找到了官方安装脚本一键解决  安装  1# wget -qO- get.docker.com | bash  如果没有wget先用yum装一下   启动docker服务  1# systemctl start docker  设置开机启动  1# systemctl enable docker">
+<meta property="og:description" content="CustomJCVideo需求 预览 视频播放完成后显示某些东西  思路 找到更新seekBar的源头并进行监听 上一篇有说因是Gradle管理jar包  所以我们无法修改源码 而通读JCVideoPlayer源码  我悲催的发现并没有关于监听播放进度的实现 接下来就要自己整了 : )  实现 首先我们需要去这里下载源码并以依赖库的形式导入项目 接着我们打开JCVideoPlayer找到 1234">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-28T10:59:13.490Z">
+<meta property="og:updated_time" content="2016-12-02T09:24:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="quick_install_docker.md">
-<meta name="twitter:description" content="快速在Linux上安装Docker 本例在CentOS 7上演示  本着偷懒的原则快速安装docker找到了官方安装脚本一键解决  安装  1# wget -qO- get.docker.com | bash  如果没有wget先用yum装一下   启动docker服务  1# systemctl start docker  设置开机启动  1# systemctl enable docker">
+<meta name="twitter:title" content="自定义节操视频播放界面(二)">
+<meta name="twitter:description" content="CustomJCVideo需求 预览 视频播放完成后显示某些东西  思路 找到更新seekBar的源头并进行监听 上一篇有说因是Gradle管理jar包  所以我们无法修改源码 而通读JCVideoPlayer源码  我悲催的发现并没有关于监听播放进度的实现 接下来就要自己整了 : )  实现 首先我们需要去这里下载源码并以依赖库的形式导入项目 接着我们打开JCVideoPlayer找到 1234">
   
     <link rel="alternative" href="/atom.xml" title="菜鸡坤" type="application/atom+xml">
   
@@ -146,53 +146,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-quick-install-docker" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-11_28_custom_jc_2" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      quick_install_docker.md
+      自定义节操视频播放界面(二)
     </h1>
   
 
         
-        <a href="/2018/11/28/quick-install-docker/" class="archive-article-date">
-  	<time datetime="2018-11-28T09:14:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-28</time>
+        <a href="/2016/12/03/11_28_custom_jc_2/" class="archive-article-date">
+  	<time datetime="2016-12-02T16:21:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="快速在Linux上安装Docker"><a href="#快速在Linux上安装Docker" class="headerlink" title="快速在Linux上安装Docker"></a>快速在Linux上安装Docker</h2><blockquote>
-<p>本例在CentOS 7上演示</p>
-</blockquote>
-<p>本着<del>偷懒</del>的原则快速安装docker<br>找到了官方安装脚本<br>一键解决</p>
-<ul>
-<li>安装</li>
+        <h2 id="CustomJCVideo"><a href="#CustomJCVideo" class="headerlink" title="CustomJCVideo"></a>CustomJCVideo</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><ul>
+<li>预览</li>
+<li>视频播放完成后显示某些东西</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> wget -qO- get.docker.com | bash</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>找到更新seekBar的源头并进行监听</li>
+<li><a href="https://nicolaskun.github.io/2016/11/23/11_23_custom_jc/" target="_blank" rel="noopener">上一篇</a>有说因是Gradle管理jar包  所以我们无法修改源码</li>
+<li>而通读JCVideoPlayer源码  我悲催的发现并没有关于监听播放进度的实现 接下来就要自己整了 : )</li>
+</ul>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
+<li>首先我们需要去<a href="https://github.com/lipangit/JieCaoVideoPlayer" target="_blank" rel="noopener">这里</a>下载源码并以依赖库的形式导入项目</li>
+<li><p>接着我们打开JCVideoPlayer找到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class ProgressTimerTask extends TimerTask &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line">            if (currentState == CURRENT_STATE_PLAYING || currentState == CURRENT_STATE_PAUSE || currentState == CURRENT_STATE_PLAYING_BUFFERING_START) &#123;</span><br><span class="line">                int position = getCurrentPositionWhenPlaying();</span><br><span class="line">                int duration = getDuration();</span><br><span class="line"></span><br><span class="line">                mHandler.post(new Runnable() &#123;</span><br><span class="line">                    @Override</span><br><span class="line">                    public void run() &#123;</span><br><span class="line">                        setTextAndProgress(JCMediaManager.instance().bufferPercent);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>以上便是控制seekBar的时间控制器 而且其中已经给出了position和duration两个参数  前者为播放进度 后者为视频长度 我们将其回调出即可</p>
+</li>
+<li><p>在依赖库中创建一个名为JCVideoProgressListener的回调接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public interface JCVideoProgressListener &#123;</span><br><span class="line">    void onProgress(int duration, int progress);</span><br><span class="line"></span><br><span class="line">    void onVideoComplete(); //监听播放完成</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接着在JCVideoPlayer中定义一个方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void setOnJCPlayingProgressListener(JCVideoProgressListener listener) &#123;</span><br><span class="line">    this.playingProgressListener = listener;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后把该监听用在ProgressTimerTask即可</p>
 <blockquote>
-<p>如果没有wget先用yum装一下</p>
+<p>if (playingProgressListener!=null)<br>  playingProgressListener.onProgress(duration, position);</p>
 </blockquote>
-<ul>
-<li>启动docker服务</li>
+</li>
+<li><p>最后在activity实现即可(PREVIEW = 15 * 1000)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onProgress(int duration, int progress) &#123;</span><br><span class="line">    Log.e(TAG, &quot;onProgress: &quot; + duration + &quot; ---- &quot; + progress);</span><br><span class="line">    if (duration &gt;= PREVIEW &amp;&amp; progress &gt;= PREVIEW) &#123;</span><br><span class="line">        handler.sendEmptyMessage(0);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>播放完成的操作在回调onVideoComplete即可</p>
+</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> systemctl start docker</span><br></pre></td></tr></table></figure>
-<ul>
-<li>设置开机启动</li>
+<h2 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h2><ul>
+<li>回调回来的进度与长度是在子线程中的 这里使用的Handler : )</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> systemctl enable docker</span><br></pre></td></tr></table></figure>
-<ul>
-<li>现在可以测试一下</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> docker run hello-world</span><br></pre></td></tr></table></figure>
-<p>输出<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Unable to find image 'hello-world:latest' locally</span><br><span class="line">latest: Pulling from library/hello-world</span><br><span class="line">d1725b59e92d: Pull complete </span><br><span class="line">Digest: sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788</span><br><span class="line">Status: Downloaded newer image for hello-world:latest</span><br><span class="line"></span><br><span class="line">Hello from Docker!</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<p>这样就是快速安装docker的过程了 :P</p>
-<p>Enjoy it!</p>
-<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3>
+<hr>
+<h2 id="点这里查看demo"><a href="#点这里查看demo" class="headerlink" title="点这里查看demo"></a><a href="https://github.com/NicolasKun/CustomJCVideo" target="_blank" rel="noopener">点这里查看demo</a></h2>
       
 
       
@@ -250,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/28/quick-install-docker/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2016/12/03/11_28_custom_jc_2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -264,9 +275,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2016/12/03/12_02_cipher/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          对称加密与非对称加密初接触
+        
+      </div>
+    </a>
   
-    <a href="/2018/11/27/shell_script_launch_exception/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Shell脚本在CentOS7上执行异常的问题</div>
+  
+    <a href="/2016/11/23/11_23_custom_jc/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">自定义节操视频播放界面(一)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -397,15 +417,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">DES与RSA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">杂记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DES与RSA</a>
               </li>
             
             <div class="clearfix"></div>
@@ -457,11 +477,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="https://github.com/linyingfa" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>发仔</a>
             </li>
           
         </ul>
