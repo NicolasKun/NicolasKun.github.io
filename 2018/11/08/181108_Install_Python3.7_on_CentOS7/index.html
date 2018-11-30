@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="菜鸡坤">
 <meta property="og:description" content="目前(2018-11-08)为止yum上还没有python3.7的安装包 所以现在使用源码进行安装   首先安装编译使用的依赖包   python3.7需要依赖libffi-devel不然会报错找不到_ctypes模块 有关讨论点这里  1# yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-deve">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T07:31:52.653Z">
+<meta property="og:updated_time" content="2018-11-30T09:30:16.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在CentOS7上安装Python3.7.1">
 <meta name="twitter:description" content="目前(2018-11-08)为止yum上还没有python3.7的安装包 所以现在使用源码进行安装   首先安装编译使用的依赖包   python3.7需要依赖libffi-devel不然会报错找不到_ctypes模块 有关讨论点这里  1# yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-deve">
@@ -175,7 +175,11 @@
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel</span><br></pre></td></tr></table></figure>
 <ul>
-<li>使用wget下载源码包 </li>
+<li><p>由于CentOS没有pip所以先安装pip </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> yum install epel-release</span><br><span class="line"><span class="meta">#</span> yum install python-pip</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用wget下载源码包 </p>
+</li>
 </ul>
 <blockquote>
 <p>查询python源码最新版本 <a href="https://www.python.org/ftp/python/" target="_blank" rel="noopener">点这里</a>     </p>
@@ -188,10 +192,16 @@
 <li>解压缩并编译源码</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> tar -zxvf Python-3.7.1.tgz</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> cd Python-3.7.1.tgz</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> ./configure prefix=/usr/local/python3</span><br><span class="line"><span class="meta">#</span> make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>及时养成prefix的好习惯 在make install安装错误的情况下直接删除目录即可</p>
+</blockquote>
 <ul>
 <li>添加Python和pip软连接 这样全局使用方便些</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ln -s /usr/local/python3/bin/python3.7 /bin/python3</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> ln -s /usr/local/pip3.7 /bin/pip3</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ln -s /usr/local/python3/bin/python3.7 /bin/python3</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> ln -s /usr/local/python3/pip3.7 /bin/pip3</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>现在是root用户 所以软链接到了/bin下  普通用户可以链接到/usr/bin下</p>
+</blockquote>
 <ul>
 <li>试一下安装是否成功</li>
 </ul>

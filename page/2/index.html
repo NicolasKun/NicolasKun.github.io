@@ -145,6 +145,219 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-12_02_cipher" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/03/12_02_cipher/">对称加密与非对称加密初接触</a>
+    </h1>
+  
+
+        
+        <a href="/2016/12/03/12_02_cipher/" class="archive-article-date">
+  	<time datetime="2016-12-02T17:25:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于非对称加密与对称加密的资料网上随便搜搜就会有的这里就不再赘述了</p>
+<h3 id="在接触前先看张流程图"><a href="#在接触前先看张流程图" class="headerlink" title="在接触前先看张流程图"></a>在接触前先看张流程图</h3><p><img src="http://ocgl54rby.bkt.clouddn.com/imgs/%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86%E6%B5%81%E7%A8%8B.png" alt="RSA加密流程"></p>
+<blockquote>
+<p>上图为RSA加密与后台的流程    PS: 画图就是这么diao : )</p>
+</blockquote>
+<h3 id="RSA加密与解密"><a href="#RSA加密与解密" class="headerlink" title="RSA加密与解密"></a>RSA加密与解密</h3><ul>
+<li>为了加强了解 RSA密钥分为公钥和私钥 公钥可以给发给别人</li>
+<li>android这边可以将服务端发过来的公钥存储在assets文件夹下</li>
+<li>Cipher类初始化需要声明transformation这里我们固定写RSA/ECB/PKCS1PADDING (为加密数据附加一段随机数)<h4 id="读取公钥"><a href="#读取公钥" class="headerlink" title="读取公钥"></a>读取公钥</h4></li>
+<li>由公钥文件获取PublicKey对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static PublicKey getPublicKeyFromFile(InputStream bais) &#123;</span><br><span class="line">    PublicKey puk = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        CertificateFactory certificatefactory = CertificateFactory</span><br><span class="line">                .getInstance(&quot;X509&quot;);</span><br><span class="line">        Certificate cert = certificatefactory.generateCertificate(bais);</span><br><span class="line"></span><br><span class="line">        bais.close();</span><br><span class="line">        puk = cert.getPublicKey();</span><br><span class="line">        Log.e(TAG, &quot;getPublicKeyFromFile: &quot; + puk);</span><br><span class="line">        return puk;</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        Log.e(TAG, &quot;getPublicKeyFromFile: 异常 &quot; + e.getMessage());</span><br><span class="line">        return puk;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h4><ul>
+<li>实际上加密只需要初始化Cipher并doFinal即可 但查资料得知公钥加密每次程度不能超过一定长度 所以需要对数据进行分段加密并进行Base64编码  详细代码如下<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public static String sPubEncrypt(String str,PublicKey publicKey)&#123;</span><br><span class="line">    String encode = &quot;&quot;;</span><br><span class="line">    try &#123;</span><br><span class="line">        Log.e(TAG, &quot;sPubEncrypt: &quot; + publicKey);</span><br><span class="line">        //实例化加密类</span><br><span class="line">        Cipher cipher = Cipher.getInstance(RSATYPE, new BouncyCastleProvider());</span><br><span class="line">        //取得明文的二进制</span><br><span class="line">        byte[] plainText = str.getBytes();</span><br><span class="line">        //加密</span><br><span class="line">        cipher.init(Cipher.ENCRYPT_MODE,publicKey);</span><br><span class="line"></span><br><span class="line">        // 对数据分段加密</span><br><span class="line">        int inputLen = plainText.length;</span><br><span class="line">        ByteArrayOutputStream out = new ByteArrayOutputStream();</span><br><span class="line">        int offSet = 0;</span><br><span class="line">        byte[] cache;</span><br><span class="line">        int i = 0;</span><br><span class="line">        while (inputLen - offSet &gt; 0) &#123;</span><br><span class="line">            if (inputLen - offSet &gt; MAX_ENCRYPT_BLOCK) &#123;</span><br><span class="line">                cache = cipher.doFinal(plainText, offSet, MAX_ENCRYPT_BLOCK);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                cache = cipher.doFinal(plainText, offSet, inputLen - offSet);</span><br><span class="line">            &#125;</span><br><span class="line">            out.write(cache, 0, cache.length);</span><br><span class="line">            i++;</span><br><span class="line">            offSet = i * MAX_ENCRYPT_BLOCK;</span><br><span class="line">        &#125;</span><br><span class="line">        byte[] encryptedData = out.toByteArray();</span><br><span class="line">        out.close();</span><br><span class="line"></span><br><span class="line">        encode = Base64.encode(encryptedData);</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        Log.e(TAG, &quot;sPubEncrypt: 加密异常 &quot; + e.getMessage());</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">        return encode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h4><ul>
+<li>同理也是使用Cipher解密  只不过初始化参数换成了DECRYPT_MODE<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public String cPubDecrypt(String encString)&#123;</span><br><span class="line">    Cipher cipher = null;</span><br><span class="line">    String strDecrypt = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        cipher = Cipher.getInstance(RSATYPE);</span><br><span class="line">        cipher.init(Cipher.DECRYPT_MODE,mPublicKey);</span><br><span class="line">        //先将转为Base64编码的加密后数据转化为Byte数组</span><br><span class="line">        byte[] enBytes = base64Dec(encString);</span><br><span class="line">        //解密为byte数组，应该为字符串数组，最后转化为字符串</span><br><span class="line">        byte[] deBytes = cipher.doFinal(enBytes);</span><br><span class="line">        strDecrypt = new String(deBytes);</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        Log.e(TAG, &quot;cPubDecrypt: &quot; + e.getMessage());</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;finally &#123;</span><br><span class="line">        return strDecrypt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="DES加密与解密"><a href="#DES加密与解密" class="headerlink" title="DES加密与解密"></a>DES加密与解密</h3><ul>
+<li>相比RSA  DES要简单不少</li>
+<li>因为是对称加密 所以仅需一对密钥即可<h4 id="获取密钥"><a href="#获取密钥" class="headerlink" title="获取密钥"></a>获取密钥</h4></li>
+<li>将服务端传来的DES密钥保存在本地即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static SecretKey getKey(String strKey) throws Exception &#123;</span><br><span class="line">		DESKeySpec desKeySpec = new DESKeySpec(strKey.getBytes());</span><br><span class="line">		SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(DES);</span><br><span class="line">		SecretKey sk = keyFactory.generateSecret(desKeySpec);</span><br><span class="line">		return sk;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="加密-1"><a href="#加密-1" class="headerlink" title="加密"></a>加密</h4><ul>
+<li>同样是用到了Cipher<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static byte[] doEncrypt(byte[] data, Key key, String type)</span><br><span class="line">    throws Exception &#123;</span><br><span class="line">  Cipher cipher = Cipher.getInstance(type);</span><br><span class="line">  cipher.init(Cipher.ENCRYPT_MODE, key);</span><br><span class="line">  return cipher.doFinal(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="解密-1"><a href="#解密-1" class="headerlink" title="解密"></a>解密</h4><ul>
+<li>初始化Cipher参数换成了DECRYPT_MODE<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public static byte[] doDecrypt(byte[] data, Key key, String type)</span><br><span class="line">    throws Exception &#123;</span><br><span class="line">  Cipher cipher = Cipher.getInstance(type);</span><br><span class="line">  cipher.init(Cipher.DECRYPT_MODE, key);</span><br><span class="line">  return cipher.doFinal(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<p>2016年12月13日09:48:46</p>
+<h4 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h4><ul>
+<li>RSA不能被服务器的私钥解密的几点猜想</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">影响因素</span><br><span class="line">publicKey源文件</span><br><span class="line">publicKey对象</span><br><span class="line">key中modulus开头00</span><br><span class="line">Base64编码</span><br><span class="line">文件类型(*.pem *.der)</span><br><span class="line">Cipher初始值</span><br><span class="line"></span><br><span class="line">排除</span><br><span class="line">多个Base64编码结果相同</span><br><span class="line">文件类型</span><br><span class="line">源文件</span><br><span class="line">00为补位</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DES与RSA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/12/03/12_02_cipher/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-11_28_custom_jc_2" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/03/11_28_custom_jc_2/">自定义节操视频播放界面(二)</a>
+    </h1>
+  
+
+        
+        <a href="/2016/12/03/11_28_custom_jc_2/" class="archive-article-date">
+  	<time datetime="2016-12-02T16:21:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="CustomJCVideo"><a href="#CustomJCVideo" class="headerlink" title="CustomJCVideo"></a>CustomJCVideo</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><ul>
+<li>预览</li>
+<li>视频播放完成后显示某些东西</li>
+</ul>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
+<li>找到更新seekBar的源头并进行监听</li>
+<li><a href="https://nicolaskun.github.io/2016/11/23/11_23_custom_jc/" target="_blank" rel="noopener">上一篇</a>有说因是Gradle管理jar包  所以我们无法修改源码</li>
+<li>而通读JCVideoPlayer源码  我悲催的发现并没有关于监听播放进度的实现 接下来就要自己整了 : )</li>
+</ul>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
+<li>首先我们需要去<a href="https://github.com/lipangit/JieCaoVideoPlayer" target="_blank" rel="noopener">这里</a>下载源码并以依赖库的形式导入项目</li>
+<li><p>接着我们打开JCVideoPlayer找到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class ProgressTimerTask extends TimerTask &#123;</span><br><span class="line">        @Override</span><br><span class="line">        public void run() &#123;</span><br><span class="line">            if (currentState == CURRENT_STATE_PLAYING || currentState == CURRENT_STATE_PAUSE || currentState == CURRENT_STATE_PLAYING_BUFFERING_START) &#123;</span><br><span class="line">                int position = getCurrentPositionWhenPlaying();</span><br><span class="line">                int duration = getDuration();</span><br><span class="line"></span><br><span class="line">                mHandler.post(new Runnable() &#123;</span><br><span class="line">                    @Override</span><br><span class="line">                    public void run() &#123;</span><br><span class="line">                        setTextAndProgress(JCMediaManager.instance().bufferPercent);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>以上便是控制seekBar的时间控制器 而且其中已经给出了position和duration两个参数  前者为播放进度 后者为视频长度 我们将其回调出即可</p>
+</li>
+<li><p>在依赖库中创建一个名为JCVideoProgressListener的回调接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public interface JCVideoProgressListener &#123;</span><br><span class="line">    void onProgress(int duration, int progress);</span><br><span class="line"></span><br><span class="line">    void onVideoComplete(); //监听播放完成</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接着在JCVideoPlayer中定义一个方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void setOnJCPlayingProgressListener(JCVideoProgressListener listener) &#123;</span><br><span class="line">    this.playingProgressListener = listener;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后把该监听用在ProgressTimerTask即可</p>
+<blockquote>
+<p>if (playingProgressListener!=null)<br>  playingProgressListener.onProgress(duration, position);</p>
+</blockquote>
+</li>
+<li><p>最后在activity实现即可(PREVIEW = 15 * 1000)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">public void onProgress(int duration, int progress) &#123;</span><br><span class="line">    Log.e(TAG, &quot;onProgress: &quot; + duration + &quot; ---- &quot; + progress);</span><br><span class="line">    if (duration &gt;= PREVIEW &amp;&amp; progress &gt;= PREVIEW) &#123;</span><br><span class="line">        handler.sendEmptyMessage(0);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>播放完成的操作在回调onVideoComplete即可</p>
+</li>
+</ul>
+<h2 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h2><ul>
+<li>回调回来的进度与长度是在子线程中的 这里使用的Handler : )</li>
+</ul>
+<hr>
+<h2 id="点这里查看demo"><a href="#点这里查看demo" class="headerlink" title="点这里查看demo"></a><a href="https://github.com/NicolasKun/CustomJCVideo" target="_blank" rel="noopener">点这里查看demo</a></h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/12/03/11_28_custom_jc_2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-11_23_custom_jc" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     

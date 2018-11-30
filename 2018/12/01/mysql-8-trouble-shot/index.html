@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 菜鸡坤</title>
+  <title>mysql-8-trouble-shot | 菜鸡坤</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="常走弯路,才会有更多支线剧情与奖励">
-<meta property="og:type" content="website">
-<meta property="og:title" content="菜鸡坤">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="笔者安装使用mysql 8 踩坑填坑实录 :(  停止和启动mysql服务 (Windows 10 1803 启动  1C:\&amp;gt; &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld&quot;  停止   1C:\&amp;gt; &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqladmin&quot; -u roo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql-8-trouble-shot">
+<meta property="og:url" content="http://yoursite.com/2018/12/01/mysql-8-trouble-shot/index.html">
 <meta property="og:site_name" content="菜鸡坤">
-<meta property="og:description" content="常走弯路,才会有更多支线剧情与奖励">
+<meta property="og:description" content="笔者安装使用mysql 8 踩坑填坑实录 :(  停止和启动mysql服务 (Windows 10 1803 启动  1C:\&amp;gt; &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld&quot;  停止   1C:\&amp;gt; &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqladmin&quot; -u roo">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/12/01/mysql-8-trouble-shot/mysql_workbench_start_and_stop_server.png">
+<meta property="og:image" content="http://yoursite.com/2018/12/01/mysql-8-trouble-shot/mysql_workbench_data_export.png">
+<meta property="og:updated_time" content="2018-11-30T10:17:56.658Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="菜鸡坤">
-<meta name="twitter:description" content="常走弯路,才会有更多支线剧情与奖励">
+<meta name="twitter:title" content="mysql-8-trouble-shot">
+<meta name="twitter:description" content="笔者安装使用mysql 8 踩坑填坑实录 :(  停止和启动mysql服务 (Windows 10 1803 启动  1C:\&amp;gt; &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld&quot;  停止   1C:\&amp;gt; &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqladmin&quot; -u roo">
+<meta name="twitter:image" content="http://yoursite.com/2018/12/01/mysql-8-trouble-shot/mysql_workbench_start_and_stop_server.png">
   
     <link rel="alternative" href="/atom.xml" title="菜鸡坤" type="application/atom+xml">
   
@@ -143,117 +147,121 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-mysql-8-trouble-shot" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mysql-8-trouble-shot
+    </h1>
+  
+
+        
+        <a href="/2018/12/01/mysql-8-trouble-shot/" class="archive-article-date">
+  	<time datetime="2018-11-30T18:08:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-30</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>笔者安装使用mysql 8 踩坑填坑实录 :(</p>
+</blockquote>
+<h2 id="停止和启动mysql服务-Windows-10-1803"><a href="#停止和启动mysql服务-Windows-10-1803" class="headerlink" title="停止和启动mysql服务 (Windows 10 1803"></a>停止和启动mysql服务 (Windows 10 1803</h2><ul>
+<li>启动</li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\&gt; "<span class="title">C</span>:\<span class="title">Program</span> <span class="title">Files</span>\<span class="title">MySQL</span>\<span class="title">MySQL</span> <span class="title">Server</span> 8.0\<span class="title">bin</span>\<span class="title">mysqld</span>"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>停止 </li>
+</ul>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\&gt; "<span class="title">C</span>:\<span class="title">Program</span> <span class="title">Files</span>\<span class="title">MySQL</span>\<span class="title">MySQL</span> <span class="title">Server</span> 8.0\<span class="title">bin</span>\<span class="title">mysqladmin</span>" -<span class="title">u</span> <span class="title">root</span> <span class="title">shutdown</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>以上是<a href="https://docs.oracle.com/cd/E17952_01/mysql-8.0-en/windows-start-command-linehtml" target="_blank" rel="noopener">官方文档</a></li>
+</ul>
+<p>停止没有问题<br>在启动服务这里报出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysqld: Can&apos;t change dir to &apos;C:\Program Files\MySQL\MySQL Server 8.0\data\&apos; (OS errno 2 - No such file or directory)</span><br><span class="line">2018-11-30T08:54:46.184667Z 0 [System] [MY-010116] [Server] C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe (mysqld 8.0.13) starting as process 10616</span><br><span class="line">2018-11-30T08:54:46.188074Z 0 [Warning] [MY-010091] [Server] Can&apos;t create test file C:\Program Files\MySQL\MySQL Server 8.0\data\unico.lower-test</span><br><span class="line">2018-11-30T08:54:46.188146Z 0 [Warning] [MY-010091] [Server] Can&apos;t create test file C:\Program Files\MySQL\MySQL Server 8.0\data\unico.lower-test</span><br><span class="line">2018-11-30T08:54:46.188613Z 0 [ERROR] [MY-010172] [Server] failed to set datadir to C:\Program Files\MySQL\MySQL Server 8.0\data\</span><br><span class="line">2018-11-30T08:54:46.196222Z 0 [ERROR] [MY-010119] [Server] Aborting</span><br><span class="line">2018-11-30T08:54:46.197294Z 0 [System] [MY-010910] [Server] C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe: Shutdown complete (mysqld 8.0.13)  MySQL Community Server - GPL.</span><br></pre></td></tr></table></figure></p>
+<p>问题在于使用MySQL 8.0 installer on Windows时把 \MySQL\MySQL Server 8.0\data\ <code>数据文件夹</code>创建在了 C:\ProgramData\MySQL\MySQL Server 8.0\Data</p>
+<ul>
+<li>解决方法:</li>
+</ul>
+<p>使用MySQL Workbench 8.0 CE面板进行启动 停止操作</p>
+<img src="/2018/12/01/mysql-8-trouble-shot/mysql_workbench_start_and_stop_server.png">
+<h2 id="导出-导入数据"><a href="#导出-导入数据" class="headerlink" title="导出/导入数据"></a>导出/导入数据</h2><blockquote>
+<p>此过程从windows mysql 8.0迁移centos 7 mysql 5.5</p>
+</blockquote>
+<ul>
+<li>导出数据</li>
+</ul>
+<img src="/2018/12/01/mysql-8-trouble-shot/mysql_workbench_data_export.png" title="workbench">
+<ul>
+<li>mysql5.5 导入mysql 8.0导出的数据</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> mysql -u root -p mydb &lt; /home/xxx/sql_file.sql</span><br></pre></td></tr></table></figure>
+<p>报错 <code>ERROR 1273 (HY000) at line 25: Unknown collation: &#39;utf8mb4_0900_ai_ci&#39;</code></p>
+<p>这是由于8.0中的字符编码使用了比utf8更高级的utf8mb4所以需要<code>手动打开</code>sql文件 将文件中的   utf8 手动改为 utf8mb4  而 utf8mb4_0900_ai_ci 改为 utf8_general_ci</p>
+<p>方案来源点<a href="https://stackoverflow.com/questions/42385099/1273-unknown-collation-utf8mb4-unicode-520-ci" target="_blank" rel="noopener">这里</a></p>
+<p>改完后再复制到linux中导入便可以了</p>
+<blockquote>
+<p>待续..</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/03/12_02_cipher/" class="archive-article-date">
-  	<time datetime="2016-12-02T17:25:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/03/12_02_cipher/">对称加密与非对称加密初接触</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DES与RSA</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/03/11_28_custom_jc_2/" class="archive-article-date">
-  	<time datetime="2016-12-02T16:21:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/30/study-mysql-0x00/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">study_mysql_0x00</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/03/11_28_custom_jc_2/">自定义节操视频播放界面(二)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/23/11_23_custom_jc/" class="archive-article-date">
-  	<time datetime="2016-11-23T09:34:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/23/11_23_custom_jc/">自定义节操视频播放界面(一)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -282,8 +290,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
