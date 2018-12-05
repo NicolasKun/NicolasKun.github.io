@@ -5,13 +5,13 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="https://nicolaskun.github.io">
   <title>自定义节操视频播放界面(二) | 菜鸡坤</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="CustomJCVideo需求 预览 视频播放完成后显示某些东西  思路 找到更新seekBar的源头并进行监听 上一篇有说因是Gradle管理jar包  所以我们无法修改源码 而通读JCVideoPlayer源码  我悲催的发现并没有关于监听播放进度的实现 接下来就要自己整了 : )  实现 首先我们需要去这里下载源码并以依赖库的形式导入项目 接着我们打开JCVideoPlayer找到 1234">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自定义节操视频播放界面(二)">
-<meta property="og:url" content="http://yoursite.com/2016/12/03/11_28_custom_jc_2/index.html">
+<meta property="og:url" content="https://nicolaskun.github.io/2016/12/03/11_28_custom_jc_2/index.html">
 <meta property="og:site_name" content="菜鸡坤">
 <meta property="og:description" content="CustomJCVideo需求 预览 视频播放完成后显示某些东西  思路 找到更新seekBar的源头并进行监听 上一篇有说因是Gradle管理jar包  所以我们无法修改源码 而通读JCVideoPlayer源码  我悲催的发现并没有关于监听播放进度的实现 接下来就要自己整了 : )  实现 首先我们需要去这里下载源码并以依赖库的形式导入项目 接着我们打开JCVideoPlayer找到 1234">
 <meta property="og:locale" content="zh-Hans">
@@ -170,7 +170,7 @@
 </ul>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ul>
 <li>找到更新seekBar的源头并进行监听</li>
-<li><a href="https://nicolaskun.github.io/2016/11/23/11_23_custom_jc/" target="_blank" rel="noopener">上一篇</a>有说因是Gradle管理jar包  所以我们无法修改源码</li>
+<li><a href="https://nicolaskun.github.io/2016/11/23/11_23_custom_jc/">上一篇</a>有说因是Gradle管理jar包  所以我们无法修改源码</li>
 <li>而通读JCVideoPlayer源码  我悲催的发现并没有关于监听播放进度的实现 接下来就要自己整了 : )</li>
 </ul>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ul>
