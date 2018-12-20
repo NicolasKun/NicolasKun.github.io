@@ -145,6 +145,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-181024-edit-excel-with-python" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/25/181024-edit-excel-with-python/">Python中使用openpyxl操作excel</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/25/181024-edit-excel-with-python/" class="archive-article-date">
+  	<time datetime="2018-10-24T16:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>使用pip安装openpyxl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install openpyxl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化Workbook 并且激活一张工作簿</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wb = WorkBook()</span><br><span class="line">bookSheet = wb.active</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>向工作簿中用list填充一行数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bookSheet.append([<span class="string">"A1"</span>, <span class="string">"B1"</span>, <span class="string">"C1"</span>, <span class="string">"D1"</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>保存该工作簿 默认保存到当前程序目录下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wb.save(<span class="string">"name.xlsx"</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/25/181024-edit-excel-with-python/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-12_02_cipher" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -568,11 +643,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DES与RSA</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">DES与RSA</a>
               </li>
              
               <li class="article-tag-list-item">

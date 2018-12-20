@@ -6,22 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://nicolaskun.github.io">
-  <title>杂记 | 菜鸡坤</title>
+  <title>&#x5728;macOS mojave&#x4E0A;&#x5B89;&#x88C5;python3.6&#x8E29;&#x5751; | &#x83DC;&#x9E21;&#x5764;</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为什么年底这么忙!!要GO DIE了 T_T">
-<meta name="keywords" content="杂记">
+  <meta name="description" content="&amp;#x672C;&amp;#x6587;&amp;#x4E8E;Mojave&amp;#x73AF;&amp;#x5883;&amp;#x64CD;&amp;#x4F5C;  &amp;#x8BF4;&amp;#x660E;&amp;#x7B14;&amp;#x8005;&amp;#x6700;&amp;#x8FD1;&amp;#x65B0;&amp;#x5165;&amp;#x4E00;&amp;#x53F0;MacBook&amp;#x7528;&amp;#x6765;&amp;#x6298;&amp;#x817E; dmg&amp;#x5305;&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="杂记">
-<meta property="og:url" content="https://nicolaskun.github.io/2018/10/24/12_23_other_1/index.html">
-<meta property="og:site_name" content="菜鸡坤">
-<meta property="og:description" content="为什么年底这么忙!!要GO DIE了 T_T">
+<meta property="og:title" content="&#x5728;macOS mojave&#x4E0A;&#x5B89;&#x88C5;python3.6&#x8E29;&#x5751;">
+<meta property="og:url" content="https://nicolaskun.github.io/2018/12/20/install-python36-on-macos-mojave/index.html">
+<meta property="og:site_name" content="&#x83DC;&#x9E21;&#x5764;">
+<meta property="og:description" content="&amp;#x672C;&amp;#x6587;&amp;#x4E8E;Mojave&amp;#x73AF;&amp;#x5883;&amp;#x64CD;&amp;#x4F5C;  &amp;#x8BF4;&amp;#x660E;&amp;#x7B14;&amp;#x8005;&amp;#x6700;&amp;#x8FD1;&amp;#x65B0;&amp;#x5165;&amp;#x4E00;&amp;#x53F0;MacBook&amp;#x7528;&amp;#x6765;&amp;#x6298;&amp;#x817E; dmg&amp;#x5305;&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-12-25T13:29:16.000Z">
+<meta property="og:image" content="https://nicolaskun.github.io/2018/12/20/install-python36-on-macos-mojave/screenshot_181220_install_completed.png">
+<meta property="og:updated_time" content="2018-12-20T04:14:06.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杂记">
-<meta name="twitter:description" content="为什么年底这么忙!!要GO DIE了 T_T">
+<meta name="twitter:title" content="&#x5728;macOS mojave&#x4E0A;&#x5B89;&#x88C5;python3.6&#x8E29;&#x5751;">
+<meta name="twitter:description" content="&amp;#x672C;&amp;#x6587;&amp;#x4E8E;Mojave&amp;#x73AF;&amp;#x5883;&amp;#x64CD;&amp;#x4F5C;  &amp;#x8BF4;&amp;#x660E;&amp;#x7B14;&amp;#x8005;&amp;#x6700;&amp;#x8FD1;&amp;#x65B0;&amp;#x5165;&amp;#x4E00;&amp;#x53F0;MacBook&amp;#x7528;&amp;#x6765;&amp;#x6298;&amp;#x817E; dmg&amp;#x5305;&amp;">
+<meta name="twitter:image" content="https://nicolaskun.github.io/2018/12/20/install-python36-on-macos-mojave/screenshot_181220_install_completed.png">
   
-    <link rel="alternative" href="/atom.xml" title="菜鸡坤" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="&#x83DC;&#x9E21;&#x5764;" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -37,7 +38,30 @@
 
   
 
-</head>
+<style type="text/css">span.spoiler {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    text-shadow: grey 0px 0px 10px;
+    cursor: pointer;
+    -webkit-transition: text-shadow .5s ease;
+       -moz-transition: text-shadow .5s ease;
+            transition: text-shadow .5s ease;
+}
+span.spoiler:hover {
+    text-shadow: grey 0px 0px 5px;
+}
+span.spoiler.revealed {
+    text-shadow: grey 0px 0px 0px;
+}
+</style><script type="text/javascript">window.addEventListener("load", function(){
+    var spoiler = document.getElementsByClassName("spoiler");
+    for(var i = 0; i < spoiler.length; ++i) {
+        spoiler[i].addEventListener("click", function() {
+            this.classList.toggle("revealed");
+        });
+    }
+});
+</script></head>
 </html>
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -58,22 +82,22 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="/">&#x4E3B;&#x9875;</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/tags/&#x968F;&#x7B14;/">&#x968F;&#x7B14;</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, &apos;innerArchive&apos;)" href="javascript:void(0)">&#x6240;&#x6709;&#x6587;&#x7AE0;</a>
     			
             
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, &apos;aboutme&apos;)" href="javascript:void(0)">&#x5173;&#x4E8E;&#x6211;</a>
     			
             
 		</nav>
@@ -128,9 +152,9 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 50%"><a href="/">&#x4E3B;&#x9875;</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/tags/&#x968F;&#x7B14;/">&#x968F;&#x7B14;</a></li>
 		        
 				</ul>
 			</nav>
@@ -142,30 +166,65 @@
       <div id="wrapper" class="body-wrap">
         <div class="menu-l">
           <div class="canvas-wrap">
-            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+            <canvas data-colors="#eaeaea" data-sectionheight="100" data-contentid="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-12_23_other_1" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-install-python36-on-macos-mojave" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      杂记
+      &#x5728;macOS mojave&#x4E0A;&#x5B89;&#x88C5;python3.6&#x8E29;&#x5751;
     </h1>
   
 
         
-        <a href="/2018/10/24/12_23_other_1/" class="archive-article-date">
-  	<time datetime="2018-10-24T07:56:09.269Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
+        <a href="/2018/12/20/install-python36-on-macos-mojave/" class="archive-article-date">
+  	<time datetime="2018-12-19T18:36:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="为什么年底这么忙-要GO-DIE了-T-T"><a href="#为什么年底这么忙-要GO-DIE了-T-T" class="headerlink" title="为什么年底这么忙!!要GO DIE了 T_T"></a>为什么年底这么忙!!要GO DIE了 T_T</h1>
+        <blockquote>
+<p>&#x672C;&#x6587;&#x4E8E;Mojave&#x73AF;&#x5883;&#x64CD;&#x4F5C;</p>
+</blockquote>
+<h3 id="&#x8BF4;&#x660E;"><a href="#&#x8BF4;&#x660E;" class="headerlink" title="&#x8BF4;&#x660E;"></a>&#x8BF4;&#x660E;</h3><p>&#x7B14;&#x8005;&#x6700;&#x8FD1;&#x65B0;&#x5165;&#x4E00;&#x53F0;MacBook&#x7528;&#x6765;&#x6298;&#x817E; dmg&#x5305;&#x5B89;&#x88C5;python3.7.1&#x4E4B;&#x540E;&#x4F7F;&#x7528;pip3&#x5B89;&#x88C5;<br>&#x4E4B;&#x540E;&#x53D1;&#x73B0;&#x6709;homebrew&#x795E;&#x5668; &#x5378;&#x8F7D;python37&#x540E;&#x53C8;&#x7528;brew&#x88C5;&#x4E86;&#x4E00;&#x904D;<br>&#x5B89;&#x88C5;tensorflow1.12.0&#x53D1;&#x73B0;&#x7206;&#x51FA;&#x4E0D;&#x517C;&#x5BB9;python3.7&#x7248;&#x672C;(&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x4E5F;&#x662F;&#x67E5;&#x4E86;&#x624D;&#x77E5;&#x9053;)</p>
+<p>&#x4E8E;&#x662F;&#x4E4E;&#x60F3;&#x5B89;&#x88C5;3.6</p>
+<span class="spoiler">&#x5168;&#x7A0B;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;
+</span>
+<p>&#x3002;&#x3002;</p>
+<p></p>
+<ul>
+<li>&#x5378;&#x8F7D;&#x4F7F;&#x7528;dmg&#x5B89;&#x88C5;&#x7684;python37 <ul>
+<li>&#x4ECE;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x5C06;&#x5DF2;&#x5B89;&#x88C5;&#x7684;python&#x6254;&#x8FDB;&#x5E9F;&#x7EB8;&#x7BD3;</li>
+<li>&#x8FDB;&#x5165;terminal&#x5220;&#x9664;/Library/Frameworks/Python.framework/Versions/</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>&#x5378;&#x8F7D;brew&#x5B89;&#x88C5;&#x7684;python</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> brew uninstall python</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br>&#x795E;&#x5947;&#x7684;&#x5730;&#x65B9;&#x6765;&#x4E86; &#x5378;&#x8F7D;&#x540E;&#x4F7F;&#x7528;python3&#x4ECD;&#x65E7;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x53EA;&#x662F;&#x63D0;&#x793A;&#x8F6F;&#x4EF6;&#x4E0D;&#x5B58;&#x5728; &#x800C;&#x4E0D;&#x662F;&#x63D0;&#x793A;&#x8BE5;&#x8F6F;&#x94FE;&#x63A5;&#x65E0;&#x6548;</p>
+<p>&#x67E5;&#x6765;&#x67E5;&#x53BB;&#x6CA1;&#x67E5;&#x51FA;&#x4E2A;&#x6240;&#x4EE5;&#x7136;</p>
+<p>&#x7A81;&#x7136;&#x770B;&#x5230;brew&#x662F;&#x5C06;python3&#x5B89;&#x88C5;&#x81F3;/usr/local/bin&#x4E0B;<br>&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x5F0F;&#x4F7F;&#x8F6F;&#x94FE;&#x63A5;&#x66F4;&#x6539;&#x751F;&#x6548;&#x5462;</p>
+<p><a href="https://apple.stackexchange.com/a/332566" target="_blank" rel="noopener">&#x8FD9;&#x4E2A;&#x7B54;&#x6848;</a>&#x89E3;&#x51B3;&#x4E86;&#x5982;&#x4F55;&#x4F7F;&#x7528;brew&#x5B89;&#x88C5;python36</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;brew&#x5B89;&#x88C5;&#x8FC7;python &#x9996;&#x5148;&#x53D6;&#x6D88;&#x94FE;&#x63A5;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew unlink python</span><br></pre></td></tr></table></figure>
+<p>&#x5B89;&#x88C5;&#x6307;&#x5B9A;&#x7248;&#x672C;(3.6)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb</span><br></pre></td></tr></table></figure></p>
+<p>&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E; &#x63D0;&#x793A;</p>
+<img src="/2018/12/20/install-python36-on-macos-mojave/screenshot_181220_install_completed.png" title="install_python36_completed image">
+<p>&#x5C06;&#x5176;&#x4FEE;&#x6539;&#x5728;~/.bash_profile</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PATH=<span class="string">&quot;/usr/local/bin:${PATH}&quot;</span></span><br><span class="line">export PATH</span><br></pre></td></tr></table></figure>
+<p>&#x4FDD;&#x5B58;&#x540E;&#x4F7F;&#x5176;&#x751F;&#x6548;<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo source ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
+<p>&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x4E00;&#x4E0B;python3 -v</p>
+<h3 id="Enjoy-it"><a href="#Enjoy-it" class="headerlink" title="Enjoy it !"></a>Enjoy it !</h3><p></p>
+
       
 
       
@@ -173,17 +232,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂记</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -197,18 +245,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/10/24/17_02_05_algorithm_2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          总结自己写的小算法(二)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/10/24/12_17_algorithm_1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">总结自己写的小算法(一)</div>
+    <a href="/2018/12/14/12_17_algorithm_1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&#x603B;&#x7ED3;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x5C0F;&#x7B97;&#x6CD5;(&#x4E00;)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -253,9 +292,9 @@
   <div class="outer">
     <div id="footer-info">
     	<span class="footer-left">
-    		&copy; 2018 NicolasKun
+    		&#xA9; 2018 NicolasKun
 			<span id="busuanzi_container_site_pv">
-				已经有<span id="busuanzi_value_site_pv"></span>位小伙伴来过
+				&#x5DF2;&#x7ECF;&#x6709;<span id="busuanzi_value_site_pv"></span>&#x4F4D;&#x5C0F;&#x4F19;&#x4F34;&#x6765;&#x8FC7;
 			</span>
     	</span>
       	<div class="footer-right">
@@ -308,13 +347,13 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, &apos;innerArchive&apos;)"><a href="javascript:void(0)" q-class="active:innerArchive">&#x6240;&#x6709;&#x6587;&#x7AE0;</a></li>
       
         
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, &apos;aboutme&apos;)"><a href="javascript:void(0)" q-class="active:aboutme">&#x5173;&#x4E8E;&#x6211;</a></li>
       
         
     </ul>
@@ -323,7 +362,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-all" q-show="innerArchive">
         <div class="search-wrap">
-          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something&#x2026;">
           <i class="icon-search icon" q-show="search|isEmptyStr"></i>
           <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
         </div>
@@ -335,15 +374,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DES与RSA</a>
+                <a href="javascript:void(0)" class="js-tag color3">&#x7B97;&#x6CD5;</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">DES&#x4E0E;RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+                <a href="javascript:void(0)" class="js-tag color3">&#x6742;&#x8BB0;</a>
               </li>
             
             <div class="clearfix"></div>
@@ -351,8 +390,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
-            3、在根目录_config.yml里添加配置：
+            &#x7F3A;&#x5931;&#x6A21;&#x5757;&#x3002;<br>1&#x3001;&#x8BF7;&#x786E;&#x4FDD;node&#x7248;&#x672C;&#x5927;&#x4E8E;6.2<br>2&#x3001;&#x5728;&#x535A;&#x5BA2;&#x6839;&#x76EE;&#x5F55;&#xFF08;&#x6CE8;&#x610F;&#x4E0D;&#x662F;yilia&#x6839;&#x76EE;&#x5F55;&#xFF09;&#x6267;&#x884C;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;<br> npm i hexo-generator-json-content --save<br><br>
+            3&#x3001;&#x5728;&#x6839;&#x76EE;&#x5F55;_config.yml&#x91CC;&#x6DFB;&#x52A0;&#x914D;&#x7F6E;&#xFF1A;
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
     meta: false
@@ -394,7 +433,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">巧妙遇到了了所有Bug/纲丝/火星哥</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&#x5DE7;&#x5999;&#x9047;&#x5230;&#x4E86;&#x4E86;&#x6240;&#x6709;Bug/&#x7EB2;&#x4E1D;/&#x706B;&#x661F;&#x54E5;</div>
   	  	
     	</section>
     
@@ -469,4 +508,3 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 </div>
   </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":true},"log":false});</script></body>
-</html>

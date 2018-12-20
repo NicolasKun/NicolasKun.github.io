@@ -168,6 +168,370 @@ span.spoiler.revealed {
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-install-python36-on-macos-mojave" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/install-python36-on-macos-mojave/">&#x5728;macOS mojave&#x4E0A;&#x5B89;&#x88C5;python3.6&#x8E29;&#x5751;</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/20/install-python36-on-macos-mojave/" class="archive-article-date">
+  	<time datetime="2018-12-19T18:36:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>&#x672C;&#x6587;&#x4E8E;Mojave&#x73AF;&#x5883;&#x64CD;&#x4F5C;</p>
+</blockquote>
+<h3 id="&#x8BF4;&#x660E;"><a href="#&#x8BF4;&#x660E;" class="headerlink" title="&#x8BF4;&#x660E;"></a>&#x8BF4;&#x660E;</h3><p>&#x7B14;&#x8005;&#x6700;&#x8FD1;&#x65B0;&#x5165;&#x4E00;&#x53F0;MacBook&#x7528;&#x6765;&#x6298;&#x817E; dmg&#x5305;&#x5B89;&#x88C5;python3.7.1&#x4E4B;&#x540E;&#x4F7F;&#x7528;pip3&#x5B89;&#x88C5;<br>&#x4E4B;&#x540E;&#x53D1;&#x73B0;&#x6709;homebrew&#x795E;&#x5668; &#x5378;&#x8F7D;python37&#x540E;&#x53C8;&#x7528;brew&#x88C5;&#x4E86;&#x4E00;&#x904D;<br>&#x5B89;&#x88C5;tensorflow1.12.0&#x53D1;&#x73B0;&#x7206;&#x51FA;&#x4E0D;&#x517C;&#x5BB9;python3.7&#x7248;&#x672C;(&#x8FD9;&#x4E2A;&#x9519;&#x8BEF;&#x4E5F;&#x662F;&#x67E5;&#x4E86;&#x624D;&#x77E5;&#x9053;)</p>
+<p>&#x4E8E;&#x662F;&#x4E4E;&#x60F3;&#x5B89;&#x88C5;3.6</p>
+<span class="spoiler">&#x5168;&#x7A0B;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;
+</span>
+<p>&#x3002;&#x3002;</p>
+<p></p>
+<ul>
+<li>&#x5378;&#x8F7D;&#x4F7F;&#x7528;dmg&#x5B89;&#x88C5;&#x7684;python37 <ul>
+<li>&#x4ECE;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E2D;&#x5C06;&#x5DF2;&#x5B89;&#x88C5;&#x7684;python&#x6254;&#x8FDB;&#x5E9F;&#x7EB8;&#x7BD3;</li>
+<li>&#x8FDB;&#x5165;terminal&#x5220;&#x9664;/Library/Frameworks/Python.framework/Versions/</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>&#x5378;&#x8F7D;brew&#x5B89;&#x88C5;&#x7684;python</p>
+  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> brew uninstall python</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br>&#x795E;&#x5947;&#x7684;&#x5730;&#x65B9;&#x6765;&#x4E86; &#x5378;&#x8F7D;&#x540E;&#x4F7F;&#x7528;python3&#x4ECD;&#x65E7;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x53EA;&#x662F;&#x63D0;&#x793A;&#x8F6F;&#x4EF6;&#x4E0D;&#x5B58;&#x5728; &#x800C;&#x4E0D;&#x662F;&#x63D0;&#x793A;&#x8BE5;&#x8F6F;&#x94FE;&#x63A5;&#x65E0;&#x6548;</p>
+<p>&#x67E5;&#x6765;&#x67E5;&#x53BB;&#x6CA1;&#x67E5;&#x51FA;&#x4E2A;&#x6240;&#x4EE5;&#x7136;</p>
+<p>&#x7A81;&#x7136;&#x770B;&#x5230;brew&#x662F;&#x5C06;python3&#x5B89;&#x88C5;&#x81F3;/usr/local/bin&#x4E0B;<br>&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x5F0F;&#x4F7F;&#x8F6F;&#x94FE;&#x63A5;&#x66F4;&#x6539;&#x751F;&#x6548;&#x5462;</p>
+<p><a href="https://apple.stackexchange.com/a/332566" target="_blank" rel="noopener">&#x8FD9;&#x4E2A;&#x7B54;&#x6848;</a>&#x89E3;&#x51B3;&#x4E86;&#x5982;&#x4F55;&#x4F7F;&#x7528;brew&#x5B89;&#x88C5;python36</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528;brew&#x5B89;&#x88C5;&#x8FC7;python &#x9996;&#x5148;&#x53D6;&#x6D88;&#x94FE;&#x63A5;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew unlink python</span><br></pre></td></tr></table></figure>
+<p>&#x5B89;&#x88C5;&#x6307;&#x5B9A;&#x7248;&#x672C;(3.6)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/f2a764ef944b1080be64bd88dca9a1d80130c558/Formula/python.rb</span><br></pre></td></tr></table></figure></p>
+<p>&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E; &#x63D0;&#x793A;</p>
+<img src="/2018/12/20/install-python36-on-macos-mojave/screenshot_181220_install_completed.png" title="install_python36_completed image">
+<p>&#x5C06;&#x5176;&#x4FEE;&#x6539;&#x5728;~/.bash_profile</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PATH=<span class="string">&quot;/usr/local/bin:${PATH}&quot;</span></span><br><span class="line">export PATH</span><br></pre></td></tr></table></figure>
+<p>&#x4FDD;&#x5B58;&#x540E;&#x4F7F;&#x5176;&#x751F;&#x6548;<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo source ~/.bash_profile</span><br></pre></td></tr></table></figure></p>
+<p>&#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x4E00;&#x4E0B;python3 -v</p>
+<h3 id="Enjoy-it"><a href="#Enjoy-it" class="headerlink" title="Enjoy it !"></a>Enjoy it !</h3><p></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/20/install-python36-on-macos-mojave/">&#x5C55;&#x5F00;&#x5168;&#x6587; &gt;&gt;</a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-12_17_algorithm_1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/14/12_17_algorithm_1/">&#x603B;&#x7ED3;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x5C0F;&#x7B97;&#x6CD5;(&#x4E00;)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/14/12_17_algorithm_1/" class="archive-article-date">
+  	<time datetime="2018-12-14T09:53:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="&#x5E8F;"><a href="#&#x5E8F;" class="headerlink" title="&#x5E8F;"></a>&#x5E8F;</h1><p>&#x7F16;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x603B;&#x6709;&#x4E00;&#x4E9B;&#x60C5;&#x51B5;&#x662F;&#x59CB;&#x6599;&#x672A;&#x53CA;&#x5E76;&#x4E14;&#x7F51;&#x4E0A;&#x4E5F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x8D44;&#x6599;&#x7684;<br>&#x8FD9;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x53BB;&#x5E94;&#x5BF9; (&#x5E9F;&#x8BDD;</p>
+<hr>
+<h3 id="&#x84DD;&#x7259;&#x6253;&#x5370;&#x6362;&#x884C;"><a href="#&#x84DD;&#x7259;&#x6253;&#x5370;&#x6362;&#x884C;" class="headerlink" title="&#x84DD;&#x7259;&#x6253;&#x5370;&#x6362;&#x884C;"></a>&#x84DD;&#x7259;&#x6253;&#x5370;&#x6362;&#x884C;</h3><ul>
+<li><p>&#x5148;&#x8D34;&#x4EE3;&#x7801;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//&#x84DD;&#x7259;&#x6253;&#x5370;&#x6362;&#x884C;</span><br><span class="line"></span><br><span class="line">private String setUpMultilineTxt(int index,int txtX ,int txtY, String content){</span><br><span class="line">    final int TXTHEIGHT = 30;</span><br><span class="line"></span><br><span class="line">    String ml = &quot;&quot;;</span><br><span class="line">    int length = content.length();</span><br><span class="line">    if (length &lt;= index) {</span><br><span class="line">        ml = printUtil.drawText(0, 1, txtX, txtY, content);</span><br><span class="line">    } else {</span><br><span class="line">        int sumLine = length / index + 1;</span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        for (int i = 0; i &lt; sumLine; i++) {</span><br><span class="line">            if (i == (sumLine - 1)) {</span><br><span class="line">                String lastLine = content.substring(index * (sumLine - 1), length);</span><br><span class="line">                sb.append(printUtil.drawText(0, 1, txtX, txtY + TXTHEIGHT * (sumLine - 1), lastLine));</span><br><span class="line">            } else {</span><br><span class="line">                String line = content.substring(index * i, index * (i + 1));</span><br><span class="line">                sb.append(printUtil.drawText(0, 1, txtX, txtY + TXTHEIGHT * i, line));</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        ml = sb.toString();</span><br><span class="line">    }</span><br><span class="line">    return ml;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x9700;&#x6C42;</p>
+<p> <a href="https://github.com/NicolasKun/MemoDemo/blob/master/app/src/main/java/cn/leeq/util/memodemo/ui/BlueToothDemo.java" target="_blank" rel="noopener">&#x8FD9;&#x4E2A;demo</a> &#x505A;&#x4E86;&#x57FA;&#x4E8E;CPCL&#x6307;&#x4EE4;&#x96C6;&#x7684;&#x84DD;&#x7259;&#x6253;&#x5370;&#x673A;&#x7684;&#x6253;&#x5370;&#x64CD;&#x4F5C;</p>
+<p> &#x540E;&#x6765;&#x9879;&#x76EE;&#x4E2D;&#x9047;&#x5230;&#x4E86; &#x5730;&#x5740;&#x592A;&#x957F;&#x9700;&#x8981;&#x6362;&#x884C;&#x7684;&#x60C5;&#x51B5;<br>&#x770B;&#x4E86;&#x6307;&#x4EE4;&#x96C6;&#x8BF4;&#x660E;&#x53D1;&#x73B0;&#x6709; &#x6362;&#x884C;&#x6307;&#x4EE4; &#x64CD;&#x4F5C;&#x540E;&#x6CA1;&#x6709;&#x6548;&#x679C; (&#x611A;&#x8822;)<br>&#x53CD;&#x590D;&#x601D;&#x8003;&#x540E;&#x51B3;&#x5B9A;&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E2A; (T_T)</p>
+</li>
+<li><p>&#x601D;&#x8DEF;</p>
+<p>  &#x6838;&#x5FC3;&#x60F3;&#x6CD5;&#x662F;&#x5C06;&#x9650;&#x5236;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;, &#x8D85;&#x51FA;&#x540E;&#x8BA1;&#x7B97;&#x53EF;&#x4EE5;&#x6253;&#x5370;&#x7684;&#x884C;&#x6570;, &#x5E76;&#x8FDB;&#x884C;&#x62FC;&#x63A5;&#x8F93;&#x51FA;</p>
+<blockquote>
+<p>&#x884C;&#x6570; = &#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6; / &#x6BCF;&#x884C;&#x9650;&#x5B9A;&#x957F;&#x5EA6;</p>
+</blockquote>
+<p>  &#x8D85;&#x51FA;&#x4E24;&#x884C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x9700;&#x8981;&#x8FDB;&#x884C;(&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6; * &#x884C;&#x6570;)&#x7684;&#x8BA1;&#x7B97;</p>
+</li>
+<li><p>&#x5B9E;&#x73B0;</p>
+<ul>
+<li>&#x5224;&#x65AD;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x6EE1;&#x8DB3;&#x4E00;&#x884C;</li>
+<li>&#x8D85;&#x51FA;&#x4E00;&#x884C;&#x540E;&#x7EDF;&#x8BA1;&#x603B;&#x884C;&#x6570;</li>
+<li>&#x904D;&#x5386;&#x884C;&#x6570; &#x5176;&#x4E2D;&#x8981;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x6700;&#x540E;&#x4E00;&#x884C; &#x6839;&#x636E;&#x6BCF;&#x884C;&#x8BA1;&#x7B97;&#x6587;&#x5B57;&#x7684;&#x8F93;&#x51FA;&#x4E0E;&#x4F4D;&#x7F6E;<br>  <code>String line = content.substring(index * i, index * (i + 1));</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">&#x7B97;&#x6CD5;</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/14/12_17_algorithm_1/">&#x5C55;&#x5F00;&#x5168;&#x6587; &gt;&gt;</a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-12_23_other_1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/14/12_23_other_1/">&#x6742;&#x8BB0;</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/14/12_23_other_1/" class="archive-article-date">
+  	<time datetime="2018-12-14T09:53:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="&#x4E3A;&#x4EC0;&#x4E48;&#x5E74;&#x5E95;&#x8FD9;&#x4E48;&#x5FD9;-&#x8981;GO-DIE&#x4E86;-T-T"><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x5E74;&#x5E95;&#x8FD9;&#x4E48;&#x5FD9;-&#x8981;GO-DIE&#x4E86;-T-T" class="headerlink" title="&#x4E3A;&#x4EC0;&#x4E48;&#x5E74;&#x5E95;&#x8FD9;&#x4E48;&#x5FD9;!!&#x8981;GO DIE&#x4E86; T_T"></a>&#x4E3A;&#x4EC0;&#x4E48;&#x5E74;&#x5E95;&#x8FD9;&#x4E48;&#x5FD9;!!&#x8981;GO DIE&#x4E86; T_T</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">&#x6742;&#x8BB0;</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/14/12_23_other_1/">&#x5C55;&#x5F00;&#x5168;&#x6587; &gt;&gt;</a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-17_02_05_algorithm_2" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/14/17_02_05_algorithm_2/">&#x603B;&#x7ED3;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x5C0F;&#x7B97;&#x6CD5;(&#x4E8C;)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/12/14/17_02_05_algorithm_2/" class="archive-article-date">
+  	<time datetime="2018-12-14T09:53:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="&#x6A2A;&#x5411;&#x6ED1;&#x52A8;&#x9009;&#x62E9;&#x65E5;&#x671F;&#x586B;&#x5145;&#x6570;&#x636E;"><a href="#&#x6A2A;&#x5411;&#x6ED1;&#x52A8;&#x9009;&#x62E9;&#x65E5;&#x671F;&#x586B;&#x5145;&#x6570;&#x636E;" class="headerlink" title="&#x6A2A;&#x5411;&#x6ED1;&#x52A8;&#x9009;&#x62E9;&#x65E5;&#x671F;&#x586B;&#x5145;&#x6570;&#x636E;"></a>&#x6A2A;&#x5411;&#x6ED1;&#x52A8;&#x9009;&#x62E9;&#x65E5;&#x671F;&#x586B;&#x5145;&#x6570;&#x636E;</h3><ul>
+<li>&#x5148;&#x8D34;&#x4EE3;&#x7801;</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//&#x8BBE;&#x7F6E;&#x6708;</span><br><span class="line">      Date time = Calendar.getInstance(Locale.CHINA).getTime();</span><br><span class="line">      int year = 1900 + time.getYear();</span><br><span class="line">      int month = time.getMonth();</span><br><span class="line">      String currentMonth = (month + 1) + &quot;&#x6708;&quot;;</span><br><span class="line"></span><br><span class="line">      //&#x586B;&#x5145;&#x5F53;&#x6708;&#x5929;&#x6570;</span><br><span class="line">      int dayCountOfCurrentMonth = SelectDateUtil.getDayCountOfCurrentMonth() + 1;  //10&#x6708; 31&#x5929; +1&#x662F;&#x4E3A;&#x8865;&#x5F53;&#x6708;&#x6700;&#x540E;&#x4E00;&#x5929;</span><br><span class="line">      Calendar instance = Calendar.getInstance(Locale.CHINA);</span><br><span class="line">      for (int i = 0; i &lt; dayCountOfCurrentMonth; i++) {</span><br><span class="line">          String s = (i) + &quot;&quot;;</span><br><span class="line">          instance.set(year, month, i);</span><br><span class="line">          Date time1 = instance.getTime();</span><br><span class="line">          String dayOfWeekFromDate = SelectDateUtil.getDayOfWeekFromDate(time1);</span><br><span class="line">          //Log.e(TAG, &quot;loadData: &quot; + s + &quot; -- &quot; +time1 + &quot; -- &quot; + dayOfWeekFromDate);</span><br><span class="line">          selectDates.add(new LPCSelectDate(s, dayOfWeekFromDate));</span><br><span class="line">      }</span><br><span class="line">      selectDates.remove(0);   //&#x79FB;&#x9664;&#x7B2C;&#x4E00;&#x4F4D;&#x4E0A;&#x4E2A;&#x6708;&#x7684;&#x6700;&#x540E;&#x4E00;&#x5929;</span><br><span class="line">      lpcDateSelectAdapter.notifyDataSetChanged();</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>&#x9700;&#x6C42;</p>
+<ul>
+<li>&#x5411;&#x6A2A;&#x5411;&#x6ED1;&#x52A8;&#x7684;RecycleView&#x65E5;&#x5386;&#x4E2D;&#x6DFB;&#x52A0;&#x6570;&#x636E;</li>
+</ul>
+</li>
+<li><p>&#x601D;&#x8DEF;</p>
+<ul>
+<li>&#x7531;Calendar&#x7C7B;&#x83B7;&#x53D6;&#x6574;&#x4E2A;&#x6708;&#x4EFD;&#x7684;&#x603B;&#x5929;&#x6570;</li>
+<li>&#x904D;&#x5386;&#x5929;&#x6570;&#x5E76;&#x6DFB;&#x52A0;&#x5230;&#x96C6;&#x5408;&#x4E2D;&#x5237;&#x65B0;RecycleView&#x9002;&#x914D;&#x5668;</li>
+</ul>
+</li>
+<li>&#x5B9E;&#x73B0;<ul>
+<li>&#x89C1;&#x4EE3;&#x7801;&#x6CE8;&#x91CA;</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">&#x7B97;&#x6CD5;</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/12/14/17_02_05_algorithm_2/">&#x5C55;&#x5F00;&#x5168;&#x6587; &gt;&gt;</a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-mysql-8-trouble-shot" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -786,348 +1150,6 @@ span.spoiler.revealed {
 
 
   
-    <article id="post-181024-edit-excel-with-python" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/181024-edit-excel-with-python/">Python&#x4E2D;&#x4F7F;&#x7528;openpyxl&#x64CD;&#x4F5C;excel</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/25/181024-edit-excel-with-python/" class="archive-article-date">
-  	<time datetime="2018-10-24T16:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>&#x4F7F;&#x7528;pip&#x5B89;&#x88C5;openpyxl</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install openpyxl</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x521D;&#x59CB;&#x5316;Workbook &#x5E76;&#x4E14;&#x6FC0;&#x6D3B;&#x4E00;&#x5F20;&#x5DE5;&#x4F5C;&#x7C3F;</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wb = WorkBook()</span><br><span class="line">bookSheet = wb.active</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x5411;&#x5DE5;&#x4F5C;&#x7C3F;&#x4E2D;&#x7528;list&#x586B;&#x5145;&#x4E00;&#x884C;&#x6570;&#x636E;</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bookSheet.append([<span class="string">&quot;A1&quot;</span>, <span class="string">&quot;B1&quot;</span>, <span class="string">&quot;C1&quot;</span>, <span class="string">&quot;D1&quot;</span>])</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x4FDD;&#x5B58;&#x8BE5;&#x5DE5;&#x4F5C;&#x7C3F; &#x9ED8;&#x8BA4;&#x4FDD;&#x5B58;&#x5230;&#x5F53;&#x524D;&#x7A0B;&#x5E8F;&#x76EE;&#x5F55;&#x4E0B;</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wb.save(<span class="string">&quot;name.xlsx&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/25/181024-edit-excel-with-python/">&#x5C55;&#x5F00;&#x5168;&#x6587; &gt;&gt;</a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-17_02_05_algorithm_2" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/24/17_02_05_algorithm_2/">&#x603B;&#x7ED3;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x5C0F;&#x7B97;&#x6CD5;(&#x4E8C;)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/24/17_02_05_algorithm_2/" class="archive-article-date">
-  	<time datetime="2018-10-24T07:56:09.274Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="&#x6A2A;&#x5411;&#x6ED1;&#x52A8;&#x9009;&#x62E9;&#x65E5;&#x671F;&#x586B;&#x5145;&#x6570;&#x636E;"><a href="#&#x6A2A;&#x5411;&#x6ED1;&#x52A8;&#x9009;&#x62E9;&#x65E5;&#x671F;&#x586B;&#x5145;&#x6570;&#x636E;" class="headerlink" title="&#x6A2A;&#x5411;&#x6ED1;&#x52A8;&#x9009;&#x62E9;&#x65E5;&#x671F;&#x586B;&#x5145;&#x6570;&#x636E;"></a>&#x6A2A;&#x5411;&#x6ED1;&#x52A8;&#x9009;&#x62E9;&#x65E5;&#x671F;&#x586B;&#x5145;&#x6570;&#x636E;</h3><ul>
-<li>&#x5148;&#x8D34;&#x4EE3;&#x7801;</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//&#x8BBE;&#x7F6E;&#x6708;</span><br><span class="line">      Date time = Calendar.getInstance(Locale.CHINA).getTime();</span><br><span class="line">      int year = 1900 + time.getYear();</span><br><span class="line">      int month = time.getMonth();</span><br><span class="line">      String currentMonth = (month + 1) + &quot;&#x6708;&quot;;</span><br><span class="line"></span><br><span class="line">      //&#x586B;&#x5145;&#x5F53;&#x6708;&#x5929;&#x6570;</span><br><span class="line">      int dayCountOfCurrentMonth = SelectDateUtil.getDayCountOfCurrentMonth() + 1;  //10&#x6708; 31&#x5929; +1&#x662F;&#x4E3A;&#x8865;&#x5F53;&#x6708;&#x6700;&#x540E;&#x4E00;&#x5929;</span><br><span class="line">      Calendar instance = Calendar.getInstance(Locale.CHINA);</span><br><span class="line">      for (int i = 0; i &lt; dayCountOfCurrentMonth; i++) {</span><br><span class="line">          String s = (i) + &quot;&quot;;</span><br><span class="line">          instance.set(year, month, i);</span><br><span class="line">          Date time1 = instance.getTime();</span><br><span class="line">          String dayOfWeekFromDate = SelectDateUtil.getDayOfWeekFromDate(time1);</span><br><span class="line">          //Log.e(TAG, &quot;loadData: &quot; + s + &quot; -- &quot; +time1 + &quot; -- &quot; + dayOfWeekFromDate);</span><br><span class="line">          selectDates.add(new LPCSelectDate(s, dayOfWeekFromDate));</span><br><span class="line">      }</span><br><span class="line">      selectDates.remove(0);   //&#x79FB;&#x9664;&#x7B2C;&#x4E00;&#x4F4D;&#x4E0A;&#x4E2A;&#x6708;&#x7684;&#x6700;&#x540E;&#x4E00;&#x5929;</span><br><span class="line">      lpcDateSelectAdapter.notifyDataSetChanged();</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>&#x9700;&#x6C42;</p>
-<ul>
-<li>&#x5411;&#x6A2A;&#x5411;&#x6ED1;&#x52A8;&#x7684;RecycleView&#x65E5;&#x5386;&#x4E2D;&#x6DFB;&#x52A0;&#x6570;&#x636E;</li>
-</ul>
-</li>
-<li><p>&#x601D;&#x8DEF;</p>
-<ul>
-<li>&#x7531;Calendar&#x7C7B;&#x83B7;&#x53D6;&#x6574;&#x4E2A;&#x6708;&#x4EFD;&#x7684;&#x603B;&#x5929;&#x6570;</li>
-<li>&#x904D;&#x5386;&#x5929;&#x6570;&#x5E76;&#x6DFB;&#x52A0;&#x5230;&#x96C6;&#x5408;&#x4E2D;&#x5237;&#x65B0;RecycleView&#x9002;&#x914D;&#x5668;</li>
-</ul>
-</li>
-<li>&#x5B9E;&#x73B0;<ul>
-<li>&#x89C1;&#x4EE3;&#x7801;&#x6CE8;&#x91CA;</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">&#x7B97;&#x6CD5;</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/24/17_02_05_algorithm_2/">&#x5C55;&#x5F00;&#x5168;&#x6587; &gt;&gt;</a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-12_23_other_1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/24/12_23_other_1/">&#x6742;&#x8BB0;</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/24/12_23_other_1/" class="archive-article-date">
-  	<time datetime="2018-10-24T07:56:09.269Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="&#x4E3A;&#x4EC0;&#x4E48;&#x5E74;&#x5E95;&#x8FD9;&#x4E48;&#x5FD9;-&#x8981;GO-DIE&#x4E86;-T-T"><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x5E74;&#x5E95;&#x8FD9;&#x4E48;&#x5FD9;-&#x8981;GO-DIE&#x4E86;-T-T" class="headerlink" title="&#x4E3A;&#x4EC0;&#x4E48;&#x5E74;&#x5E95;&#x8FD9;&#x4E48;&#x5FD9;!!&#x8981;GO DIE&#x4E86; T_T"></a>&#x4E3A;&#x4EC0;&#x4E48;&#x5E74;&#x5E95;&#x8FD9;&#x4E48;&#x5FD9;!!&#x8981;GO DIE&#x4E86; T_T</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">&#x6742;&#x8BB0;</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/24/12_23_other_1/">&#x5C55;&#x5F00;&#x5168;&#x6587; &gt;&gt;</a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-12_17_algorithm_1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/24/12_17_algorithm_1/">&#x603B;&#x7ED3;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x5C0F;&#x7B97;&#x6CD5;(&#x4E00;)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/10/24/12_17_algorithm_1/" class="archive-article-date">
-  	<time datetime="2018-10-24T07:56:09.260Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="&#x5E8F;"><a href="#&#x5E8F;" class="headerlink" title="&#x5E8F;"></a>&#x5E8F;</h1><p>&#x7F16;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x603B;&#x6709;&#x4E00;&#x4E9B;&#x60C5;&#x51B5;&#x662F;&#x59CB;&#x6599;&#x672A;&#x53CA;&#x5E76;&#x4E14;&#x7F51;&#x4E0A;&#x4E5F;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x8D44;&#x6599;&#x7684;<br>&#x8FD9;&#x65F6;&#x5019;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x53BB;&#x5E94;&#x5BF9; (&#x5E9F;&#x8BDD;</p>
-<hr>
-<h3 id="&#x84DD;&#x7259;&#x6253;&#x5370;&#x6362;&#x884C;"><a href="#&#x84DD;&#x7259;&#x6253;&#x5370;&#x6362;&#x884C;" class="headerlink" title="&#x84DD;&#x7259;&#x6253;&#x5370;&#x6362;&#x884C;"></a>&#x84DD;&#x7259;&#x6253;&#x5370;&#x6362;&#x884C;</h3><ul>
-<li><p>&#x5148;&#x8D34;&#x4EE3;&#x7801;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//&#x84DD;&#x7259;&#x6253;&#x5370;&#x6362;&#x884C;</span><br><span class="line"></span><br><span class="line">private String setUpMultilineTxt(int index,int txtX ,int txtY, String content){</span><br><span class="line">    final int TXTHEIGHT = 30;</span><br><span class="line"></span><br><span class="line">    String ml = &quot;&quot;;</span><br><span class="line">    int length = content.length();</span><br><span class="line">    if (length &lt;= index) {</span><br><span class="line">        ml = printUtil.drawText(0, 1, txtX, txtY, content);</span><br><span class="line">    } else {</span><br><span class="line">        int sumLine = length / index + 1;</span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        for (int i = 0; i &lt; sumLine; i++) {</span><br><span class="line">            if (i == (sumLine - 1)) {</span><br><span class="line">                String lastLine = content.substring(index * (sumLine - 1), length);</span><br><span class="line">                sb.append(printUtil.drawText(0, 1, txtX, txtY + TXTHEIGHT * (sumLine - 1), lastLine));</span><br><span class="line">            } else {</span><br><span class="line">                String line = content.substring(index * i, index * (i + 1));</span><br><span class="line">                sb.append(printUtil.drawText(0, 1, txtX, txtY + TXTHEIGHT * i, line));</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        ml = sb.toString();</span><br><span class="line">    }</span><br><span class="line">    return ml;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x9700;&#x6C42;</p>
-<p> <a href="https://github.com/NicolasKun/MemoDemo/blob/master/app/src/main/java/cn/leeq/util/memodemo/ui/BlueToothDemo.java" target="_blank" rel="noopener">&#x8FD9;&#x4E2A;demo</a> &#x505A;&#x4E86;&#x57FA;&#x4E8E;CPCL&#x6307;&#x4EE4;&#x96C6;&#x7684;&#x84DD;&#x7259;&#x6253;&#x5370;&#x673A;&#x7684;&#x6253;&#x5370;&#x64CD;&#x4F5C;</p>
-<p> &#x540E;&#x6765;&#x9879;&#x76EE;&#x4E2D;&#x9047;&#x5230;&#x4E86; &#x5730;&#x5740;&#x592A;&#x957F;&#x9700;&#x8981;&#x6362;&#x884C;&#x7684;&#x60C5;&#x51B5;<br>&#x770B;&#x4E86;&#x6307;&#x4EE4;&#x96C6;&#x8BF4;&#x660E;&#x53D1;&#x73B0;&#x6709; &#x6362;&#x884C;&#x6307;&#x4EE4; &#x64CD;&#x4F5C;&#x540E;&#x6CA1;&#x6709;&#x6548;&#x679C; (&#x611A;&#x8822;)<br>&#x53CD;&#x590D;&#x601D;&#x8003;&#x540E;&#x51B3;&#x5B9A;&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E2A; (T_T)</p>
-</li>
-<li><p>&#x601D;&#x8DEF;</p>
-<p>  &#x6838;&#x5FC3;&#x60F3;&#x6CD5;&#x662F;&#x5C06;&#x9650;&#x5236;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6;, &#x8D85;&#x51FA;&#x540E;&#x8BA1;&#x7B97;&#x53EF;&#x4EE5;&#x6253;&#x5370;&#x7684;&#x884C;&#x6570;, &#x5E76;&#x8FDB;&#x884C;&#x62FC;&#x63A5;&#x8F93;&#x51FA;</p>
-<blockquote>
-<p>&#x884C;&#x6570; = &#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x957F;&#x5EA6; / &#x6BCF;&#x884C;&#x9650;&#x5B9A;&#x957F;&#x5EA6;</p>
-</blockquote>
-<p>  &#x8D85;&#x51FA;&#x4E24;&#x884C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x9700;&#x8981;&#x8FDB;&#x884C;(&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6; * &#x884C;&#x6570;)&#x7684;&#x8BA1;&#x7B97;</p>
-</li>
-<li><p>&#x5B9E;&#x73B0;</p>
-<ul>
-<li>&#x5224;&#x65AD;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x662F;&#x5426;&#x6EE1;&#x8DB3;&#x4E00;&#x884C;</li>
-<li>&#x8D85;&#x51FA;&#x4E00;&#x884C;&#x540E;&#x7EDF;&#x8BA1;&#x603B;&#x884C;&#x6570;</li>
-<li>&#x904D;&#x5386;&#x884C;&#x6570; &#x5176;&#x4E2D;&#x8981;&#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x6700;&#x540E;&#x4E00;&#x884C; &#x6839;&#x636E;&#x6BCF;&#x884C;&#x8BA1;&#x7B97;&#x6587;&#x5B57;&#x7684;&#x8F93;&#x51FA;&#x4E0E;&#x4F4D;&#x7F6E;<br>  <code>String line = content.substring(index * i, index * (i + 1));</code></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">&#x7B97;&#x6CD5;</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/24/12_17_algorithm_1/">&#x5C55;&#x5F00;&#x5168;&#x6587; &gt;&gt;</a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &#xBB;</a>
@@ -1226,11 +1248,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DES&#x4E0E;RSA</a>
+                <a href="javascript:void(0)" class="js-tag color3">&#x7B97;&#x6CD5;</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">&#x7B97;&#x6CD5;</a>
+                <a href="javascript:void(0)" class="js-tag color3">DES&#x4E0E;RSA</a>
               </li>
              
               <li class="article-tag-list-item">
