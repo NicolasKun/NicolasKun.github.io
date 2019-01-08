@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://nicolaskun.github.io/2018/11/09/git_usually_commands/</loc>
+    
+    <lastmod>2019-01-08T10:31:01.710Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://nicolaskun.github.io/2018/12/20/install-python36-on-macos-mojave/</loc>
     
     <lastmod>2018-12-20T04:14:06.333Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://nicolaskun.github.io/2018/11/28/shell_script_launch_exception/</loc>
     
     <lastmod>2018-11-27T10:30:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://nicolaskun.github.io/2018/11/09/git_usually_commands/</loc>
-    
-    <lastmod>2018-11-09T07:41:46.000Z</lastmod>
     
   </url>
   
