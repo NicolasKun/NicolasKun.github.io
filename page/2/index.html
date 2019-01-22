@@ -145,69 +145,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-181108_Install_Python3.7_on_CentOS7" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-12_23_other_1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/08/181108_Install_Python3.7_on_CentOS7/">在CentOS7上安装Python3.7.1</a>
+      <a class="article-title" href="/2016/12/24/12_23_other_1/">杂记</a>
     </h1>
   
 
         
-        <a href="/2018/11/08/181108_Install_Python3.7_on_CentOS7/" class="archive-article-date">
-  	<time datetime="2018-11-08T15:12:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-08</time>
+        <a href="/2016/12/24/12_23_other_1/" class="archive-article-date">
+  	<time datetime="2016-12-23T17:40:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>目前(2018-11-08)为止yum上还没有python3.7的安装包 所以现在使用源码进行安装</p>
-</blockquote>
-<ul>
-<li>首先安装编译使用的依赖包</li>
-</ul>
-<blockquote>
-<p>python3.7需要依赖libffi-devel不然会报错找不到_ctypes模块 有关讨论<a href="https://github.com/pyenv/pyenv/issues/1183" target="_blank" rel="noopener">点这里</a></p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> yum install -y zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make libffi-devel</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>由于CentOS没有pip所以先安装pip </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> yum install epel-release</span><br><span class="line"><span class="meta">#</span> yum install python-pip</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用wget下载源码包 </p>
-</li>
-</ul>
-<blockquote>
-<p>查询python源码最新版本 <a href="https://www.python.org/ftp/python/" target="_blank" rel="noopener">点这里</a>     </p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> wget https://www.python.org/ftp/python/3.7.1/Python-3.7.1.tgz</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>由于众所周知的原因 下载太慢就把源码包通过某种方式下载下来 然后ftp传到服务器上</p>
-</blockquote>
-<ul>
-<li>解压缩并编译源码</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> tar -zxvf Python-3.7.1.tgz</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> cd Python-3.7.1.tgz</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> ./configure prefix=/usr/local/python3</span><br><span class="line"><span class="meta">#</span> make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>及时养成prefix的好习惯 在make install安装错误的情况下直接删除目录即可</p>
-</blockquote>
-<ul>
-<li>添加Python和pip软连接 这样全局使用方便些</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> ln -s /usr/local/python3/bin/python3.7 /bin/python3</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> ln -s /usr/local/python3/pip3.7 /bin/pip3</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>现在是root用户 所以软链接到了/bin下  普通用户可以链接到/usr/bin下</p>
-</blockquote>
-<ul>
-<li>试一下安装是否成功</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> python3 -V</span><br></pre></td></tr></table></figure>
-<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3>
+        <h1 id="为什么年底这么忙-要GO-DIE了-T-T"><a href="#为什么年底这么忙-要GO-DIE了-T-T" class="headerlink" title="为什么年底这么忙!!要GO DIE了 T_T"></a>为什么年底这么忙!!要GO DIE了 T_T</h1>
       
 
       
@@ -215,11 +173,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/08/181108_Install_Python3.7_on_CentOS7/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/24/12_23_other_1/">展开全文 >></a>
         </p>
       
 
@@ -249,40 +218,53 @@
 
 
   
-    <article id="post-181024-edit-excel-with-python" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-12_17_algorithm_1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/25/181024-edit-excel-with-python/">Python中使用openpyxl操作excel</a>
+      <a class="article-title" href="/2016/12/18/12_17_algorithm_1/">总结自己写的小算法(一)</a>
     </h1>
   
 
         
-        <a href="/2018/10/25/181024-edit-excel-with-python/" class="archive-article-date">
-  	<time datetime="2018-10-24T16:38:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-24</time>
+        <a href="/2016/12/18/12_17_algorithm_1/" class="archive-article-date">
+  	<time datetime="2016-12-17T16:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p>使用pip安装openpyxl</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install openpyxl</span><br></pre></td></tr></table></figure>
+        <h1 id="序"><a href="#序" class="headerlink" title="序"></a>序</h1><p>编码的过程中，总有一些情况是始料未及并且网上也没有任何资料的<br>这时候需要我们自己去应对 (废话</p>
+<hr>
+<h3 id="蓝牙打印换行"><a href="#蓝牙打印换行" class="headerlink" title="蓝牙打印换行"></a>蓝牙打印换行</h3><ul>
+<li><p>先贴代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//蓝牙打印换行</span><br><span class="line"></span><br><span class="line">private String setUpMultilineTxt(int index,int txtX ,int txtY, String content)&#123;</span><br><span class="line">    final int TXTHEIGHT = 30;</span><br><span class="line"></span><br><span class="line">    String ml = &quot;&quot;;</span><br><span class="line">    int length = content.length();</span><br><span class="line">    if (length &lt;= index) &#123;</span><br><span class="line">        ml = printUtil.drawText(0, 1, txtX, txtY, content);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        int sumLine = length / index + 1;</span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        for (int i = 0; i &lt; sumLine; i++) &#123;</span><br><span class="line">            if (i == (sumLine - 1)) &#123;</span><br><span class="line">                String lastLine = content.substring(index * (sumLine - 1), length);</span><br><span class="line">                sb.append(printUtil.drawText(0, 1, txtX, txtY + TXTHEIGHT * (sumLine - 1), lastLine));</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                String line = content.substring(index * i, index * (i + 1));</span><br><span class="line">                sb.append(printUtil.drawText(0, 1, txtX, txtY + TXTHEIGHT * i, line));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ml = sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    return ml;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>初始化Workbook 并且激活一张工作簿</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wb = WorkBook()</span><br><span class="line">bookSheet = wb.active</span><br></pre></td></tr></table></figure>
+<li><p>需求</p>
+<p> <a href="https://github.com/NicolasKun/MemoDemo/blob/master/app/src/main/java/cn/leeq/util/memodemo/ui/BlueToothDemo.java" target="_blank" rel="noopener">这个demo</a> 做了基于CPCL指令集的蓝牙打印机的打印操作</p>
+<p> 后来项目中遇到了 地址太长需要换行的情况<br>看了指令集说明发现有 换行指令 操作后没有效果 (愚蠢)<br>反复思考后决定自己写一个 (T_T)</p>
 </li>
-<li><p>向工作簿中用list填充一行数据</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bookSheet.append([<span class="string">"A1"</span>, <span class="string">"B1"</span>, <span class="string">"C1"</span>, <span class="string">"D1"</span>])</span><br></pre></td></tr></table></figure>
+<li><p>思路</p>
+<p>  核心想法是将限制输入字符串的长度, 超出后计算可以打印的行数, 并进行拼接输出</p>
+<blockquote>
+<p>行数 = 输入字符串的长度 / 每行限定长度</p>
+</blockquote>
+<p>  超出两行的字符串需要进行(字符串长度 * 行数)的计算</p>
 </li>
-<li><p>保存该工作簿 默认保存到当前程序目录下</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wb.save(<span class="string">"name.xlsx"</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>实现</p>
+<ul>
+<li>判断输入字符串是否满足一行</li>
+<li>超出一行后统计总行数</li>
+<li>遍历行数 其中要判断是否是最后一行 根据每行计算文字的输出与位置<br>  <code>String line = content.substring(index * i, index * (i + 1));</code></li>
 </ul>
-
+</li>
+</ul>
+<hr>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
       
 
       
@@ -290,11 +272,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/25/181024-edit-excel-with-python/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/12/18/12_17_algorithm_1/">展开全文 >></a>
         </p>
       
 
@@ -747,11 +740,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">DES与RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DES与RSA</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">

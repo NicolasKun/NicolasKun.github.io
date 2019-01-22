@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://nicolaskun.github.io">
-  <title>总结自己写的小算法(二) | 菜鸡坤</title>
+  <title>杂记 | 菜鸡坤</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="横向滑动选择日期填充数据 先贴代码  1234567891011121314151617181920//设置月      Date time = Calendar.getInstance(Locale.CHINA).getTime();      int year = 1900 + time.getYear();      int month = time.getMonth();      Str">
-<meta name="keywords" content="算法">
+  <meta name="description" content="为什么年底这么忙!!要GO DIE了 T_T">
+<meta name="keywords" content="杂记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="总结自己写的小算法(二)">
-<meta property="og:url" content="https://nicolaskun.github.io/2018/12/14/17_02_05_algorithm_2/index.html">
+<meta property="og:title" content="杂记">
+<meta property="og:url" content="https://nicolaskun.github.io/2016/12/24/12_23_other_1/index.html">
 <meta property="og:site_name" content="菜鸡坤">
-<meta property="og:description" content="横向滑动选择日期填充数据 先贴代码  1234567891011121314151617181920//设置月      Date time = Calendar.getInstance(Locale.CHINA).getTime();      int year = 1900 + time.getYear();      int month = time.getMonth();      Str">
+<meta property="og:description" content="为什么年底这么忙!!要GO DIE了 T_T">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-02-06T03:29:02.000Z">
+<meta property="og:updated_time" content="2019-01-22T16:36:39.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="总结自己写的小算法(二)">
-<meta name="twitter:description" content="横向滑动选择日期填充数据 先贴代码  1234567891011121314151617181920//设置月      Date time = Calendar.getInstance(Locale.CHINA).getTime();      int year = 1900 + time.getYear();      int month = time.getMonth();      Str">
+<meta name="twitter:title" content="杂记">
+<meta name="twitter:description" content="为什么年底这么忙!!要GO DIE了 T_T">
   
     <link rel="alternative" href="/atom.xml" title="菜鸡坤" type="application/atom+xml">
   
@@ -145,49 +145,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-17_02_05_algorithm_2" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-12_23_other_1" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      总结自己写的小算法(二)
+      杂记
     </h1>
   
 
         
-        <a href="/2018/12/14/17_02_05_algorithm_2/" class="archive-article-date">
-  	<time datetime="2018-12-14T09:53:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-14</time>
+        <a href="/2016/12/24/12_23_other_1/" class="archive-article-date">
+  	<time datetime="2016-12-23T17:40:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="横向滑动选择日期填充数据"><a href="#横向滑动选择日期填充数据" class="headerlink" title="横向滑动选择日期填充数据"></a>横向滑动选择日期填充数据</h3><ul>
-<li>先贴代码</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//设置月</span><br><span class="line">      Date time = Calendar.getInstance(Locale.CHINA).getTime();</span><br><span class="line">      int year = 1900 + time.getYear();</span><br><span class="line">      int month = time.getMonth();</span><br><span class="line">      String currentMonth = (month + 1) + &quot;月&quot;;</span><br><span class="line"></span><br><span class="line">      //填充当月天数</span><br><span class="line">      int dayCountOfCurrentMonth = SelectDateUtil.getDayCountOfCurrentMonth() + 1;  //10月 31天 +1是为补当月最后一天</span><br><span class="line">      Calendar instance = Calendar.getInstance(Locale.CHINA);</span><br><span class="line">      for (int i = 0; i &lt; dayCountOfCurrentMonth; i++) &#123;</span><br><span class="line">          String s = (i) + &quot;&quot;;</span><br><span class="line">          instance.set(year, month, i);</span><br><span class="line">          Date time1 = instance.getTime();</span><br><span class="line">          String dayOfWeekFromDate = SelectDateUtil.getDayOfWeekFromDate(time1);</span><br><span class="line">          //Log.e(TAG, &quot;loadData: &quot; + s + &quot; -- &quot; +time1 + &quot; -- &quot; + dayOfWeekFromDate);</span><br><span class="line">          selectDates.add(new LPCSelectDate(s, dayOfWeekFromDate));</span><br><span class="line">      &#125;</span><br><span class="line">      selectDates.remove(0);   //移除第一位上个月的最后一天</span><br><span class="line">      lpcDateSelectAdapter.notifyDataSetChanged();</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>需求</p>
-<ul>
-<li>向横向滑动的RecycleView日历中添加数据</li>
-</ul>
-</li>
-<li><p>思路</p>
-<ul>
-<li>由Calendar类获取整个月份的总天数</li>
-<li>遍历天数并添加到集合中刷新RecycleView适配器</li>
-</ul>
-</li>
-<li>实现<ul>
-<li>见代码注释</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>
+        <h1 id="为什么年底这么忙-要GO-DIE了-T-T"><a href="#为什么年底这么忙-要GO-DIE了-T-T" class="headerlink" title="为什么年底这么忙!!要GO DIE了 T_T"></a>为什么年底这么忙!!要GO DIE了 T_T</h1>
       
 
       
@@ -200,7 +178,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">杂记</a>
         		</li>
       		
 		</ul>
@@ -219,18 +197,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/14/12_23_other_1/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/02/05/17_02_05_algorithm_2/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          杂记
+          总结自己写的小算法(二)
         
       </div>
     </a>
   
   
-    <a href="/2018/12/01/mysql-8-trouble-shot/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mysql-8-trouble-shot</div>
+    <a href="/2016/12/18/12_17_algorithm_1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">总结自己写的小算法(一)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -357,11 +335,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">DES与RSA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DES与RSA</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
