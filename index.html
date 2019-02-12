@@ -92,6 +92,8 @@ span.spoiler.revealed {
     			
             
     			
+    			<a q-on="click: openSlider(e, &apos;friends&apos;)" href="javascript:void(0)">true</a>
+    			
             
     			
     			<a q-on="click: openSlider(e, &apos;aboutme&apos;)" href="javascript:void(0)">&#x5173;&#x4E8E;&#x6211;</a>
@@ -213,14 +215,14 @@ span.spoiler.revealed {
 <p>&#x7B14;&#x8005;&#x672C;&#x6B21;&#x662F;&#x6253;&#x5305;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x4E3A;&#x955C;&#x50CF;<br>&#x672C;&#x4F8B;&#x4EE5;Python 3&#x4F5C;&#x4E3A;&#x793A;&#x4F8B;</p>
 <h3 id="&#x7F16;&#x8F91;Dockerfile"><a href="#&#x7F16;&#x8F91;Dockerfile" class="headerlink" title="&#x7F16;&#x8F91;Dockerfile"></a>&#x7F16;&#x8F91;Dockerfile</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">FROM python:3.6.8-slim</span><br><span class="line"></span><br><span class="line">WORKDIR /usr/src/app</span><br><span class="line"></span><br><span class="line">COPY requirements.txt ./</span><br><span class="line">RUN pip install --no-cache-dir -r requirements.txt</span><br><span class="line"></span><br><span class="line">COPY . .</span><br><span class="line"></span><br><span class="line">CMD [ &quot;python&quot;, &quot;./tight_janalysisi_data.py&quot; ]</span><br></pre></td></tr></table></figure>
 <ol>
-<li><code>FROM</code> &#x57FA;&#x7840;&#x955C;&#x50CF; &#x6307;&#x5728;&#x67D0;&#x4E2A;&#x6307;&#x5B9A;&#x955C;&#x50CF;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x884C;&#x81EA;&#x5DF1;&#x7684;&#x5305;&#x88C5; &#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x63A8;&#x8350;&#x4EE5;<a href="https://github.com/docker-library/docs" target="_blank" rel="noopener">&#x5B98;&#x65B9;&#x955C;&#x50CF;</a>&#x4E3A;&#x57FA;&#x7840; &#x6B64;&#x6307;&#x4EE4;&#x9700;&#x8981;&#x7B2C;&#x4E00;&#x884C;</li>
+<li><code>FROM</code> &#x57FA;&#x7840;&#x955C;&#x50CF; &#x6307;&#x5728;&#x67D0;&#x4E2A;&#x6307;&#x5B9A;&#x955C;&#x50CF;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x884C;&#x81EA;&#x5DF1;&#x7684;&#x5305;&#x88C5; &#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x63A8;&#x8350;&#x4EE5;<a href="https://github.com/docker-library/docs" target="_blank" rel="noopener">&#x5B98;&#x65B9;&#x955C;&#x50CF;</a>&#x4E3A;&#x57FA;&#x7840; &#x6B64;&#x6307;&#x4EE4;&#x9700;&#x8981;&#x5728;&#x5168;&#x6587;&#x7B2C;&#x4E00;&#x884C;</li>
 <li><code>WORKDIR</code> &#x6307;&#x5B9A;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF08;&#x6216;&#x8005;&#x79F0;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#xFF09;</li>
 <li><code>COPY</code> &#x590D;&#x5236;&#x6587;&#x4EF6; [&lt;&#x6E90;&#x8DEF;&#x5F84;&gt;, &lt;&#x76EE;&#x6807;&#x8DEF;&#x5F84;&gt;]</li>
 <li><code>RUN</code> &#x6267;&#x884C;&#x547D;&#x4EE4;&#x884C;&#x547D;&#x4EE4; &#x5982; <code>RUN apt-get update</code><br>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;Dockerfile&#x4E2D;&#x6BCF;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x90FD;&#x4F1A;&#x65B0;&#x5EFA;&#x4E00;&#x5C42;&#x955C;&#x50CF; &#x800C;&#x6BCF;&#x4E00;&#x5C42;&#x955C;&#x50CF;&#x95F4;&#x5B8C;&#x5168;&#x662F;&#x4E24;&#x4E2A;&#x4E0D;&#x7528;&#x7684;&#x73AF;&#x5883;<br>&#x6240;&#x4EE5;&#x5F3A;&#x70C8;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;RUN &#x6328;&#x4E2A;&#x53BB;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x884C;&#x547D;&#x4EE4; &#x8FD9;&#x6837;&#x4E0D;&#x4EC5;&#x4F1A;&#x589E;&#x5927;&#x955C;&#x50CF;&#x4F53;&#x79EF;&#x66F4;&#x4F1A;&#x4F7F;&#x524D;&#x540E;&#x627F;&#x63A5;&#x7684;shell&#x547D;&#x4EE4;&#x4E0D;&#x5728;&#x4E00;&#x4E2A;&#x73AF;&#x5883;&#x800C;&#x5BFC;&#x81F4;&#x6253;&#x5305;&#x51FA;&#x9519;</li>
 <li><code>CMD</code> &#x5BB9;&#x5668;&#x7684;&#x6267;&#x884C;&#x547D;&#x4EE4; docker&#x5C06;&#x4E00;&#x6574;&#x53E5;shell&#x547D;&#x4EE4;&#x62C6;&#x5206;&#x6267;&#x884C;</li>
 </ol>
 <h3 id="&#x6784;&#x5EFA;"><a href="#&#x6784;&#x5EFA;" class="headerlink" title="&#x6784;&#x5EFA;"></a>&#x6784;&#x5EFA;</h3><p>&#x6B64;&#x65F6;&#x7F16;&#x5199;&#x597D;Dockerfile&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x6253;&#x5305;&#x4E86;<br>&#x5982;&#x679C;&#x8981;&#x4E0A;&#x4F20;&#x5230;hub.docker&#x7684;&#x8BDD;&#x9700;&#x8981;&#x5148;&#x521B;&#x5EFA;&#x4ED3;&#x5E93;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker build &lt;hub&#x4E0A;&#x7684;&#x4ED3;&#x5E93;&#x540D;&gt; .</span><br></pre></td></tr></table></figure>
+<p>&#x63A5;&#x7740;<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker build &lt;hub&#x4E0A;&#x7684;&#x4ED3;&#x5E93;&#x540D;&gt; .</span><br></pre></td></tr></table></figure></p>
 <p>&#x6700;&#x540E;&#x7684;&#x70B9;&#x662F;&#x6307;&#x955C;&#x50CF;&#x4F7F;&#x7528;&#x7684;<code>&#x4E0A;&#x4E0B;&#x6587;</code> &#x5373;Dockerfile&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x90FD;&#x662F;&#x76F8;&#x5BF9;&#x4E8E;&#x6B64;&#x7684;&#x8DEF;&#x5F84;</p>
 <h3 id="&#x6D4B;&#x8BD5;"><a href="#&#x6D4B;&#x8BD5;" class="headerlink" title="&#x6D4B;&#x8BD5;"></a>&#x6D4B;&#x8BD5;</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker run -it &lt;hub&#x4E0A;&#x7684;&#x4ED3;&#x5E93;&#x540D;&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="&#x4E0A;&#x4F20;"><a href="#&#x4E0A;&#x4F20;" class="headerlink" title="&#x4E0A;&#x4F20;"></a>&#x4E0A;&#x4F20;</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker push &lt;hub&#x4E0A;&#x7684;&#x4ED3;&#x5E93;&#x540D;&gt;</span><br></pre></td></tr></table></figure>
@@ -1235,6 +1237,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
+      
+      
     
       
       
@@ -1246,13 +1250,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, &apos;innerArchive&apos;)"><a href="javascript:void(0)" q-class="active:innerArchive">&#x6240;&#x6709;&#x6587;&#x7AE0;</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, &apos;innerArchive&apos;)"><a href="javascript:void(0)" q-class="active:innerArchive">&#x6240;&#x6709;&#x6587;&#x7AE0;</a></li>
       
         
       
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, &apos;friends&apos;)"><a href="javascript:void(0)" q-class="active:friends">true</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, &apos;aboutme&apos;)"><a href="javascript:void(0)" q-class="active:aboutme">&#x5173;&#x4E8E;&#x6211;</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, &apos;aboutme&apos;)"><a href="javascript:void(0)" q-class="active:aboutme">&#x5173;&#x4E8E;&#x6211;</a></li>
       
         
     </ul>
@@ -1281,11 +1287,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">&#x5BB9;&#x5668;</a>
+                <a href="javascript:void(0)" class="js-tag color3">&#x6742;&#x8BB0;</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">&#x6742;&#x8BB0;</a>
+                <a href="javascript:void(0)" class="js-tag color3">&#x5BB9;&#x5668;</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1332,11 +1338,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://github.com/linyingfa" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>&#x53D1;&#x4ED4;</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&#x5DE7;&#x5999;&#x9047;&#x5230;&#x4E86;&#x4E86;&#x6240;&#x6709;Bug/&#x7EB2;&#x4E1D;/&#x706B;&#x661F;&#x54E5;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&#x5DE7;&#x5999;&#x9047;&#x5230;&#x4E86;&#x6240;&#x6709;Bug/&#x7EB2;&#x4E1D;/&#x706B;&#x661F;&#x54E5;</div>
   	  	
     	</section>
     

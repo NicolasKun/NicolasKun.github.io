@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="菜鸡坤">
 <meta property="og:description" content="安装参考之前的文章  常用命令运行1$ docker run -itd &amp;lt;your_container_name&amp;gt; 其中-i 指以交互模式运行终端-t 为容器分配一个伪终端  (-i -t通常一起使用-d 后台运行容器 查看容器1$ docker ps (-l) (-a) 其中不添加可选参数列出的是正在运行的容器-l 列出最近添加的容器-a 列出所有容器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-22T16:43:48.425Z">
+<meta property="og:updated_time" content="2019-02-12T09:27:15.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker日常">
 <meta name="twitter:description" content="安装参考之前的文章  常用命令运行1$ docker run -itd &amp;lt;your_container_name&amp;gt; 其中-i 指以交互模式运行终端-t 为容器分配一个伪终端  (-i -t通常一起使用-d 后台运行容器 查看容器1$ docker ps (-l) (-a) 其中不添加可选参数列出的是正在运行的容器-l 列出最近添加的容器-a 列出所有容器">
@@ -70,6 +70,8 @@
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
             
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">true</a>
     			
             
     			
@@ -190,14 +192,14 @@
 <p>笔者本次是打包脚本文件为镜像<br>本例以Python 3作为示例</p>
 <h3 id="编辑Dockerfile"><a href="#编辑Dockerfile" class="headerlink" title="编辑Dockerfile"></a>编辑Dockerfile</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">FROM python:3.6.8-slim</span><br><span class="line"></span><br><span class="line">WORKDIR /usr/src/app</span><br><span class="line"></span><br><span class="line">COPY requirements.txt ./</span><br><span class="line">RUN pip install --no-cache-dir -r requirements.txt</span><br><span class="line"></span><br><span class="line">COPY . .</span><br><span class="line"></span><br><span class="line">CMD [ &quot;python&quot;, &quot;./tight_janalysisi_data.py&quot; ]</span><br></pre></td></tr></table></figure>
 <ol>
-<li><code>FROM</code> 基础镜像 指在某个指定镜像的基础上进行自己的包装 这里使用推荐以<a href="https://github.com/docker-library/docs" target="_blank" rel="noopener">官方镜像</a>为基础 此指令需要第一行</li>
+<li><code>FROM</code> 基础镜像 指在某个指定镜像的基础上进行自己的包装 这里使用推荐以<a href="https://github.com/docker-library/docs" target="_blank" rel="noopener">官方镜像</a>为基础 此指令需要在全文第一行</li>
 <li><code>WORKDIR</code> 指定工作目录（或者称为当前目录）</li>
 <li><code>COPY</code> 复制文件 [&lt;源路径&gt;, &lt;目标路径&gt;]</li>
 <li><code>RUN</code> 执行命令行命令 如 <code>RUN apt-get update</code><br>需要注意的是Dockerfile中每一条指令都会新建一层镜像 而每一层镜像间完全是两个不用的环境<br>所以强烈不建议使用RUN 挨个去执行命令行命令 这样不仅会增大镜像体积更会使前后承接的shell命令不在一个环境而导致打包出错</li>
 <li><code>CMD</code> 容器的执行命令 docker将一整句shell命令拆分执行</li>
 </ol>
 <h3 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h3><p>此时编写好Dockerfile可以开始打包了<br>如果要上传到hub.docker的话需要先创建仓库</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker build &lt;hub上的仓库名&gt; .</span><br></pre></td></tr></table></figure>
+<p>接着<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker build &lt;hub上的仓库名&gt; .</span><br></pre></td></tr></table></figure></p>
 <p>最后的点是指镜像使用的<code>上下文</code> 即Dockerfile中使用的文件路径都是相对于此的路径</p>
 <h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker run -it &lt;hub上的仓库名&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> docker push &lt;hub上的仓库名&gt;</span><br></pre></td></tr></table></figure>
@@ -233,6 +235,57 @@
 
       
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://nicolaskun.github.io/2019/01/23/docker-compass/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
@@ -277,6 +330,23 @@
 
   
 
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  //id: "https://nicolaskun.github.io/2019/01/23/docker-compass/",
+  id: 'Tue Jan 22 2019 22:52:48 GMT+0000',
+  owner: 'NicolasKun',
+  repo: 'https://github.com/NicolasKun/BlogReviews',
+  oauth: {
+    client_id: '44ca62d25d5eb00a3dbc',
+    client_secret: 'b1c35a984bb0d21ef70c73f758c4670748f36a9b',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -333,6 +403,8 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
     
       
+      
+      
     
       
       
@@ -344,13 +416,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">true</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -379,11 +453,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">容器</a>
+                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂记</a>
+                <a href="javascript:void(0)" class="js-tag color3">容器</a>
               </li>
             
             <div class="clearfix"></div>
@@ -430,11 +504,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://github.com/linyingfa" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>发仔</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">巧妙遇到了了所有Bug/纲丝/火星哥</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">巧妙遇到了所有Bug/纲丝/火星哥</div>
   	  	
     	</section>
     
