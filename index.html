@@ -308,6 +308,244 @@ span.spoiler.revealed {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://nicolaskun.github.io/2019/07/02/hexo-abc/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="NicolasKun">
+      <meta itemprop="description" content="&#x5E38;&#x8D70;&#x5F2F;&#x8DEF;,&#x624D;&#x4F1A;&#x6709;&#x66F4;&#x591A;&#x652F;&#x7EBF;&#x5267;&#x60C5;&#x4E0E;&#x5956;&#x52B1;">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="&#x83DC;&#x9E21;&#x5764;">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/02/hexo-abc/" class="post-title-link" itemprop="url">HexoABC</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">&#x53D1;&#x8868;&#x4E8E;</span>
+              
+
+              
+                
+              
+
+              <time title="&#x521B;&#x5EFA;&#x65F6;&#x95F4;&#xFF1A;2019-07-02 09:55:34 / &#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;02:44:47" itemprop="dateCreated datePublished" datetime="2019-07-02T09:55:34Z">2019-07-02</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>&#x786E;&#x4FDD;&#x7CFB;&#x7EDF;&#x5B89;&#x88C5;&#x597D;Node.js&#x4E0E;Git  </p>
+</blockquote>
+<hr>
+<p><span id="0"></span></p>
+<h2 id="&#x5B89;&#x88C5;&#x4E0E;&#x914D;&#x7F6E;"><a href="#&#x5B89;&#x88C5;&#x4E0E;&#x914D;&#x7F6E;" class="headerlink" title="&#x5B89;&#x88C5;&#x4E0E;&#x914D;&#x7F6E;"></a>&#x5B89;&#x88C5;&#x4E0E;&#x914D;&#x7F6E;</h2><p></p>
+<ol>
+<li><p>&#x5B89;&#x88C5;Hexo   </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x6307;&#x5B9A;&#x67D0;&#x4E00;&#x6587;&#x4EF6;&#x5939;&#x4E3A;&#x5EFA;&#x7AD9;&#x6587;&#x4EF6;&#x5939; &#x4F7F;&#x7528;&#x5728;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x521D;&#x59CB;&#x5316;&#x7AD9;&#x70B9;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo init &lt;folder name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x8FDB;&#x5165;&#x8BE5;&#x76EE;&#x5F55; &#x4F7F;&#x7528;npm&#x5B89;&#x88C5;&#x5FC5;&#x8981;&#x6A21;&#x5757;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cd &lt;folder name&gt;</span><br><span class="line"><span class="meta">$</span> npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x914D;&#x7F6E;&#x7AD9;&#x70B9;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;_config.yml<br>&#x8BBE;&#x7F6E;&#x7F51;&#x7AD9;&#x6807;&#x9898; &#x526F;&#x6807;&#x9898; &#x7F51;&#x7AD9;&#x6240;&#x5C5E;&#x8005;<br>&#x5982;&#x679C;&#x60F3;&#x589E;&#x52A0;&#x641C;&#x7D22;&#x66DD;&#x5149;&#x7387;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;sitemap&#x5E76;&#x63D0;&#x4F9B;&#x7ED9;&#x5404;&#x5927;&#x641C;&#x7D22;&#x5F15;&#x64CE;</p>
+<ul>
+<li>Hexo&#x6709;&#x7279;&#x6B8A;&#x7684;&#x8D44;&#x6E90;&#x5F15;&#x7528;&#x65B9;&#x5F0F; &#x6BD4;&#x5982;&#x56FE;&#x7247;&#x53EF;&#x4EE5;&#x4E0D;&#x4F7F;&#x7528;<code>[]()</code>&#x65B9;&#x5F0F;&#x52A0;&#x8F7D;</li>
+<li>&#x5728;_config.yml&#x4E2D;&#x8BBE;&#x7F6E;post_asset_folder: true&#x5F00;&#x542F;&#x6B64;&#x529F;&#x80FD; &#x5177;&#x4F53;&#x4F7F;&#x7528;&#x5728;&#x4E0B;&#x4E00;&#x8282;</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><span id="1"></span></p>
+<h2 id="&#x5199;&#x4F5C;&#x4E0E;&#x9884;&#x89C8;"><a href="#&#x5199;&#x4F5C;&#x4E0E;&#x9884;&#x89C8;" class="headerlink" title="&#x5199;&#x4F5C;&#x4E0E;&#x9884;&#x89C8;"></a>&#x5199;&#x4F5C;&#x4E0E;&#x9884;&#x89C8;</h2><p></p>
+<ol>
+<li><p>&#x4F7F;&#x7528; new &#x547D;&#x4EE4;&#x521B;&#x5EFA;&#x4E00;&#x7BC7;&#x65B0;&#x6587;&#x7AE0;  </p>
+<ul>
+<li>&#x5982;&#x679C;post_asset_folder&#x5904;&#x4E8E;&#x5F00;&#x542F;&#x6A21;&#x5F0F; &#x5219;&#x521B;&#x5EFA;&#x6587;&#x7AE0;&#x540E;&#x4F1A;&#x751F;&#x6210;&#x6587;&#x7AE0;&#x8D44;&#x6E90;&#x76EE;&#x5F55; &#x53EF;&#x4EE5;&#x5C06;&#x5916;&#x90E8;&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x653E;&#x5165;<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new post &lt;title&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>&#x4F7F;&#x7528;Markdown&#x5199;&#x6587;&#x7AE0;</p>
+<ul>
+<li>&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x521B;&#x5EFA;&#x7684;&#x6587;&#x7AE0;&#x9876;&#x90E8;&#x4F1A;&#x6709;&#x9ED8;&#x8BA4;&#x7684;title, date&#x4E0E;tag </li>
+<li>&#x5982;&#x679C;post_asset_folder&#x5904;&#x4E8E;&#x5F00;&#x542F;&#x6A21;&#x5F0F; &#x5F15;&#x7528;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x5C06;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x683C;&#x5F0F;</li>
+<li><span style="background-color: #eee;padding:2px 4px;overflow-wrap: break-word;word-wrap: break-word;border-radius: 3px;font-size: 14px;">{% asset_img(asset_path|asset_link) <relative_path> [width] [height] [desc] %}</relative_path></span></li>
+<li>width height&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x5355;&#x4F4D; &#x4E5F;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x767E;&#x5206;&#x6BD4; &#x53EF;&#x4EE5;&#x4E0D;&#x8BBE;&#x7F6E;</li>
+</ul>
+</li>
+<li>&#x9884;&#x89C8;&#x6587;&#x7AE0;<ul>
+<li>&#x6309;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;</li>
+<li><code>hexo clean</code>  (&#x6E05;&#x9664;&#x5DF2;&#x751F;&#x6210;&#x7684;&#x9759;&#x6001;&#x9875;&#x9762;)</li>
+<li><code>hexo generate</code> (&#x751F;&#x6210;&#x9759;&#x6001;&#x9875;&#x9762;)</li>
+<li><code>hexo server</code> (&#x542F;&#x52A8;&#x672C;&#x5730;&#x670D;&#x52A1; &#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;&#x4E3A;4000 &#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8BBF;&#x95EE;localhost:4000&#x9884;&#x89C8;&#x521A;&#x5199;&#x597D;&#x7684;&#x6587;&#x7AE0;) </li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><span id="2"></span></p>
+<h2 id="&#x914D;&#x7F6E;GitHub"><a href="#&#x914D;&#x7F6E;GitHub" class="headerlink" title="&#x914D;&#x7F6E;GitHub"></a>&#x914D;&#x7F6E;GitHub</h2><p></p>
+<ol>
+<li>&#x5728;&#x81EA;&#x5DF1;&#x7684;GitHub&#x8D26;&#x6237;&#x4E2D;&#x65B0;&#x5EFA;&#x4E00;&#x7F51;&#x7AD9;&#x4E13;&#x7528;&#x7A7A;&#x4ED3;&#x5E93; &#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x521D;&#x59CB;&#x5316;README.md<ul>
+<li>&#x540D;&#x79F0;&#x5FC5;&#x987B;&#x4EE5;<code>.github.io</code>&#x7ED3;&#x5C3E;</li>
+</ul>
+</li>
+<li>&#x5C06;&#x8BE5;&#x4ED3;&#x5E93;ssh&#x8DEF;&#x5F84;&#x914D;&#x7F6E;&#x5728;&#x672C;&#x5730;&#x7AD9;&#x70B9;&#x6839;&#x76EE;&#x5F55;&#x7684;_config.yml&#x4E2D;&#x7684;deploy&#x8282;&#x70B9;&#x4E0B;  <ul>
+<li><code>type</code>&#x8BBE;&#x7F6E;git</li>
+<li><code>repo</code>&#x8BBE;&#x7F6E;&#x521A;&#x521A;&#x4ED3;&#x5E93;&#x7684;ssh&#x5730;&#x5740;</li>
+<li><code>branch</code>&#x9ED8;&#x8BA4;master</li>
+</ul>
+</li>
+<li><p>&#x5728;&#x672C;&#x5730;&#x4F7F;&#x7528;git&#x751F;&#x6210;&#x516C;&#x94A5;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C &quot;&lt;github registe email&gt;&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x5C06;<code>3</code>&#x6B65;&#x4E2D;&#x62FF;&#x5230;&#x7684;&#x516C;&#x94A5;&#x5728;GitHub&#x4E2A;&#x4EBA;&#x8BBE;&#x7F6E;&#x4E2D;SSH and GPG keys&#x4E2D;&#x65B0;&#x5EFA;&#x4E00;&#x7AD9;&#x70B9;&#x4E13;&#x7528;<code>ssh key</code>&#x540D;&#x79F0;&#x968F;&#x610F;</p>
+</li>
+</ol>
+<hr>
+<p><span id="3"></span></p>
+<h2 id="&#x90E8;&#x7F72;"><a href="#&#x90E8;&#x7F72;" class="headerlink" title="&#x90E8;&#x7F72;"></a>&#x90E8;&#x7F72;</h2><p></p>
+<ol>
+<li>&#x786E;&#x8BA4;&#x672C;&#x5730;&#x9884;&#x89C8;&#x6CA1;&#x6709;&#x95EE;&#x9898;<br>GitHub SSH key &#x8BBE;&#x7F6E;&#x6B63;&#x786E;<br>_config.yml&#x914D;&#x7F6E;&#x4ED3;&#x5E93;&#x6B63;&#x786E;</li>
+<li><p>&#x6309;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo clean</span><br><span class="line"><span class="meta">$</span> hexo generate</span><br><span class="line"><span class="meta">$</span> hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>&#x63A5;&#x7740;&#x8BBF;&#x95EE;&#x4E4B;&#x524D;&#x8BBE;&#x7F6E;&#x7684;&#x4ED3;&#x5E93;&#x540D;&#x79F0;&#x5373;<code>&lt;repo_name&gt;.github.io</code></p>
+</li>
+</ol>
+<hr>
+<p><span id="4"></span></p>
+<h2 id="&#x5916;&#x89C2;&#x4E0E;&#x4E2A;&#x6027;&#x5316;"><a href="#&#x5916;&#x89C2;&#x4E0E;&#x4E2A;&#x6027;&#x5316;" class="headerlink" title="&#x5916;&#x89C2;&#x4E0E;&#x4E2A;&#x6027;&#x5316;"></a>&#x5916;&#x89C2;&#x4E0E;&#x4E2A;&#x6027;&#x5316;</h2><p></p>
+<blockquote>
+<p>Hexo&#x652F;&#x6301;&#x4E3B;&#x9898;&#x8BBE;&#x7F6E;&#x4E14;&#x793E;&#x533A;&#x62E5;&#x6709;&#x5F88;&#x591A;&#x7CBE;&#x7F8E;&#x7684;&#x81EA;&#x5236;&#x4E3B;&#x9898;&#x53EF;&#x4F9B;&#x4F7F;&#x7528;</p>
+</blockquote>
+<ol>
+<li>&#x4E0B;&#x8F7D;&#x4E3B;&#x9898;&#x5230;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;themes/</li>
+<li>&#x5728;&#x6839;&#x76EE;&#x5F55;&#x4E0B;_config.yml&#x7684;theme&#x8282;&#x70B9;&#x914D;&#x7F6E;&#x4E3B;&#x9898;</li>
+<li>&#x6309;&#x9700;&#x5728;<code>themes/&lt;theme&gt;/_config.yml</code>&#x4E2D;&#x914D;&#x7F6E;&#x5C5E;&#x6027;</li>
+<li>&#x91CD;&#x590D;<a href="#1">&#x5199;&#x4F5C;&#x4E0E;&#x9884;&#x89C8;</a>&#x7B2C;&#x4E09;&#x70B9;&#x4E2D;&#x7684;&#x4E09;&#x884C;&#x547D;&#x4EE4; &#x5E76;&#x9884;&#x89C8;</li>
+</ol>
+<hr>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://nicolaskun.github.io/2019/07/01/flutter-abc-0x00/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -2023,164 +2261,6 @@ span.spoiler.revealed {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://nicolaskun.github.io/2018/10/25/181024-edit-excel-with-python/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="NicolasKun">
-      <meta itemprop="description" content="&#x5E38;&#x8D70;&#x5F2F;&#x8DEF;,&#x624D;&#x4F1A;&#x6709;&#x66F4;&#x591A;&#x652F;&#x7EBF;&#x5267;&#x60C5;&#x4E0E;&#x5956;&#x52B1;">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="&#x83DC;&#x9E21;&#x5764;">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/10/25/181024-edit-excel-with-python/" class="post-title-link" itemprop="url">Python&#x4E2D;&#x4F7F;&#x7528;openpyxl&#x64CD;&#x4F5C;excel</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">&#x53D1;&#x8868;&#x4E8E;</span>
-              
-
-              
-                
-              
-
-              <time title="&#x521B;&#x5EFA;&#x65F6;&#x95F4;&#xFF1A;2018-10-24 16:38:12 / &#x4FEE;&#x6539;&#x65F6;&#x95F4;&#xFF1A;09:29:46" itemprop="dateCreated datePublished" datetime="2018-10-24T16:38:12Z">2018-10-24</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><p>&#x4F7F;&#x7528;pip&#x5B89;&#x88C5;openpyxl</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install openpyxl</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x521D;&#x59CB;&#x5316;Workbook &#x5E76;&#x4E14;&#x6FC0;&#x6D3B;&#x4E00;&#x5F20;&#x5DE5;&#x4F5C;&#x7C3F;</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wb = WorkBook()</span><br><span class="line">bookSheet = wb.active</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x5411;&#x5DE5;&#x4F5C;&#x7C3F;&#x4E2D;&#x7528;list&#x586B;&#x5145;&#x4E00;&#x884C;&#x6570;&#x636E;</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bookSheet.append([<span class="string">&quot;A1&quot;</span>, <span class="string">&quot;B1&quot;</span>, <span class="string">&quot;C1&quot;</span>, <span class="string">&quot;D1&quot;</span>])</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>&#x4FDD;&#x5B58;&#x8BE5;&#x5DE5;&#x4F5C;&#x7C3F; &#x9ED8;&#x8BA4;&#x4FDD;&#x5B58;&#x5230;&#x5F53;&#x524D;&#x7A0B;&#x5E8F;&#x76EE;&#x5F55;&#x4E0B;</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wb.save(<span class="string">&quot;name.xlsx&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2229,7 +2309,7 @@ span.spoiler.revealed {
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">&#x65E5;&#x5FD7;</span>
                   </a>
                 </div>
@@ -2254,7 +2334,9 @@ span.spoiler.revealed {
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">&#x6807;&#x7B7E;</span>
                   
                 </div>
