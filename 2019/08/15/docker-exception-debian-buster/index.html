@@ -94,18 +94,18 @@
 
 
 
-  <meta name="description" content="为什么年底这么忙!!要GO DIE了 T_T">
-<meta name="keywords" content="杂记">
+  <meta name="description" content="问题描述:最近新装了Debian10(buster) 重启后docker抛出异常但root用户使用正常 异常信息如下   docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%">
+<meta name="keywords" content="容器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="杂记">
-<meta property="og:url" content="https://nicolaskun.github.io/2016/12/24/12_23_other_1/index.html">
+<meta property="og:title" content="Debian10重启后Docker异常">
+<meta property="og:url" content="https://nicolaskun.github.io/2019/08/15/docker-exception-debian-buster/index.html">
 <meta property="og:site_name" content="菜鸡坤">
-<meta property="og:description" content="为什么年底这么忙!!要GO DIE了 T_T">
+<meta property="og:description" content="问题描述:最近新装了Debian10(buster) 重启后docker抛出异常但root用户使用正常 异常信息如下   docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-22T16:36:39.347Z">
+<meta property="og:updated_time" content="2019-08-15T02:39:51.345Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="杂记">
-<meta name="twitter:description" content="为什么年底这么忙!!要GO DIE了 T_T">
+<meta name="twitter:title" content="Debian10重启后Docker异常">
+<meta name="twitter:description" content="问题描述:最近新装了Debian10(buster) 重启后docker抛出异常但root用户使用正常 异常信息如下   docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%">
 
 
 
@@ -113,7 +113,7 @@
 
   
   
-  <link rel="canonical" href="https://nicolaskun.github.io/2016/12/24/12_23_other_1/">
+  <link rel="canonical" href="https://nicolaskun.github.io/2019/08/15/docker-exception-debian-buster/">
 
 
 
@@ -123,7 +123,7 @@
   };
 </script>
 
-  <title>杂记 | 菜鸡坤</title>
+  <title>Debian10重启后Docker异常 | 菜鸡坤</title>
   
 
 
@@ -286,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://nicolaskun.github.io/2016/12/24/12_23_other_1/">
+    <link itemprop="mainEntityOfPage" href="https://nicolaskun.github.io/2019/08/15/docker-exception-debian-buster/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="NicolasKun">
@@ -303,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">杂记
+          <h1 class="post-title" itemprop="name headline">Debian10重启后Docker异常
 
               
             
@@ -329,23 +329,13 @@
                 
               
 
-              <time title="创建时间：2016-12-23 17:40:21" itemprop="dateCreated datePublished" datetime="2016-12-23T17:40:21Z">2016-12-23</time>
+              <time title="创建时间：2019-08-15 10:02:47 / 修改时间：02:39:51" itemprop="dateCreated datePublished" datetime="2019-08-15T10:02:47Z">2019-08-15</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-22 16:36:39" itemprop="dateModified" datetime="2019-01-22T16:36:39Z">2019-01-22</time>
-              </span>
             
           
 
@@ -389,7 +379,23 @@
       
 
       
-        <h1 id="为什么年底这么忙-要GO-DIE了-T-T"><a href="#为什么年底这么忙-要GO-DIE了-T-T" class="headerlink" title="为什么年底这么忙!!要GO DIE了 T_T"></a>为什么年底这么忙!!要GO DIE了 T_T</h1>
+        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述:"></a>问题描述:</h3><p>最近新装了Debian10(buster) 重启后docker抛出异常<br>但root用户使用正常</p>
+<p>异常信息如下  </p>
+<p><code>docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post http://%2Fvar%2Frun%2Fdocker.sock/v1.35/containers/create: dial unix /var/run/docker.sock: connect: permission denied.See &#39;docker run --help&#39;.</code></p>
+<a id="more"></a>
+<hr>
+<h3 id="冷静分析-并不"><a href="#冷静分析-并不" class="headerlink" title="冷静分析 (并不"></a>冷静分析 (并不</h3><p>查询资料后得知是由于docker用户组由于某种原因在系统重启后从系统用户组中移除了 所以我们登录的当前用户不能通过docker用户组访问docker服务<br>而docker的守护程序dockerd是由root用户启动 所以root用户可以直接访问docker服务</p>
+<p>可以使用如下命令查看docker守护程序dockerd运行者</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ps -aux | grep dockerd</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h3><p>问题原因找到了 那我们就可以从用户组方面着手解决<br>执行如下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo usermod -aG docker $USER</span><br></pre></td></tr></table></figure>
+<p>第一次运行该命令会提示输入root密码<br>命令完成后<code>不会立即生效</code><br>理论上桌面环境注销当前用户重新登录就可以 但实测<code>Debian10</code>需要重启计算机后才会起效  </p>
+<p>重启后执行如下命令查验解决方案是否生效<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> groups</span><br></pre></td></tr></table></figure></p>
+<p>若在列表中发现docker组 说明已经生效<br>这之后使用非root用户执行docker就可以正常运行了</p>
+<hr>
+<p>参考资料: <a href="https://techoverflow.net/2018/12/15/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket/" target="_blank" rel="noopener">TechOverflow 2018-12-15</a></p>
+<h3 id="END"><a href="#END" class="headerlink" title="END"></a>END</h3>
       
     </div>
 
@@ -415,7 +421,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/杂记/" rel="tag"># 杂记</a>
+            <a href="/tags/容器/" rel="tag"># 容器</a>
           
         </div>
       
@@ -428,8 +434,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/18/12_17_algorithm_1/" rel="next" title="总结自己写的小算法(一)">
-                <i class="fa fa-chevron-left"></i> 总结自己写的小算法(一)
+              <a href="/2019/07/02/hexo-abc/" rel="next" title="HexoABC">
+                <i class="fa fa-chevron-left"></i> HexoABC
               </a>
             
           </div>
@@ -437,10 +443,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/02/05/17_02_05_algorithm_2/" rel="prev" title="总结自己写的小算法(二)">
-                总结自己写的小算法(二) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -591,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么年底这么忙-要GO-DIE了-T-T"><span class="nav-number">1.</span> <span class="nav-text">为什么年底这么忙!!要GO DIE了 T_T</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冷静分析-并不"><span class="nav-number">2.</span> <span class="nav-text">冷静分析 (并不</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题解决"><span class="nav-number">3.</span> <span class="nav-text">问题解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#END"><span class="nav-number">4.</span> <span class="nav-text">END</span></a></li></ol></div>
             
 
           </div>
