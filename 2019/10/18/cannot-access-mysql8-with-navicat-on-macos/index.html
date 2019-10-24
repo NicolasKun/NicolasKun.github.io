@@ -105,7 +105,7 @@
 <meta property="og:image" content="https://nicolaskun.github.io/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/img_0.png">
 <meta property="og:image" content="https://nicolaskun.github.io/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/img_1.png">
 <meta property="og:image" content="https://nicolaskun.github.io/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/img_2.png">
-<meta property="og:updated_time" content="2019-10-17T11:18:47.924Z">
+<meta property="og:updated_time" content="2019-10-18T06:18:19.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="macOS下不能通过Navicat访问MySQL服务 报(Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded)">
 <meta name="twitter:description" content="环境 本地操作系统: macOS Catalina 10.15 本地MySQL 版本: 8.0.17 服务器: Debian 10 (buster) 服务器MySQL版本: 8.0.18  问题服务器新安装MySQL8发现在命令行可以正常链接访问而在NavicatPremium12中无法连接报错如下图">
@@ -333,13 +333,23 @@
                 
               
 
-              <time title="创建时间：2019-10-17 16:58:57 / 修改时间：11:18:47" itemprop="dateCreated datePublished" datetime="2019-10-17T16:58:57Z">2019-10-17</time>
+              <time title="创建时间：2019-10-17 16:58:57" itemprop="dateCreated datePublished" datetime="2019-10-17T16:58:57Z">2019-10-17</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-18 06:18:19" itemprop="dateModified" datetime="2019-10-18T06:18:19Z">2019-10-18</time>
+              </span>
             
           
 
@@ -406,7 +416,7 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p</span><br><span class="line">mysql&gt; use mysql;</span><br><span class="line">mysql&gt; CREATE USER &apos;root&apos;@&apos;%&apos;;</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos;;</span><br></pre></td></tr></table></figure>
   <img src="/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/img_1.png" title="img_1">  
 <blockquote>
-<p>可以看到创建用户后该用户的登录认证方式依旧是`caching_sha2_password<br>  所以需要继续修改plugin  </p>
+<p>可以看到创建用户后该用户的登录认证方式依旧是<code>caching_sha2_password</code><br>  所以需要继续修改plugin  </p>
 </blockquote>
 </li>
 <li><p>修改用户的认证插件  </p>
@@ -474,6 +484,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/24/daily-classic-joke-01/" rel="prev" title="经典段子-黑牛还是白牛">
+                经典段子-黑牛还是白牛 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -544,7 +558,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -575,7 +589,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
