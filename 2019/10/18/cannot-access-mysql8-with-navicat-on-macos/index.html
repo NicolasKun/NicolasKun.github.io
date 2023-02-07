@@ -1,23 +1,377 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"nicolaskun.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="环境 本地操作系统: macOS Catalina 10.15 本地MySQL 版本: 8.0.17 服务器: Debian 10 (buster) 服务器MySQL版本: 8.0.18  问题服务器新安装MySQL8发现在命令行可以正常链接访问而在NavicatPremium12中无法连接报错如下图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="macOS下不能通过Navicat访问MySQL服务 报(Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded)">
+<meta property="og:url" content="https://nicolaskun.github.io/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/index.html">
+<meta property="og:site_name" content="菜鸡坤">
+<meta property="og:description" content="环境 本地操作系统: macOS Catalina 10.15 本地MySQL 版本: 8.0.17 服务器: Debian 10 (buster) 服务器MySQL版本: 8.0.18  问题服务器新安装MySQL8发现在命令行可以正常链接访问而在NavicatPremium12中无法连接报错如下图">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://nicolaskun.github.io/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/img_0.png">
+<meta property="og:image" content="https://nicolaskun.github.io/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/img_1.png">
+<meta property="og:image" content="https://nicolaskun.github.io/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/img_2.png">
+<meta property="article:published_time" content="2019-10-17T16:58:57.000Z">
+<meta property="article:modified_time" content="2019-10-18T06:18:19.329Z">
+<meta property="article:author" content="NicolasKun">
+<meta property="article:tag" content="开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nicolaskun.github.io/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/img_0.png">
+
+
+<link rel="canonical" href="https://nicolaskun.github.io/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://nicolaskun.github.io/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/","path":"2019/10/18/cannot-access-mysql8-with-navicat-on-macos/","title":"macOS下不能通过Navicat访问MySQL服务 报(Authentication plugin 'caching_sha2_password' cannot be loaded)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>macOS下不能通过Navicat访问MySQL服务 报(Authentication plugin 'caching_sha2_password' cannot be loaded) | 菜鸡坤</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">菜鸡坤</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section">首页</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section">归档</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section">标签</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3"><span class="nav-number">3.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#END"><span class="nav-number">4.</span> <span class="nav-text">END</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">NicolasKun</p>
+  <div class="site-description" itemprop="description">常走弯路,才会有更多支线剧情与奖励</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nicolaskun.github.io/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="NicolasKun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸡坤">
+      <meta itemprop="description" content="常走弯路,才会有更多支线剧情与奖励">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="macOS下不能通过Navicat访问MySQL服务 报(Authentication plugin 'caching_sha2_password' cannot be loaded) | 菜鸡坤">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          macOS下不能通过Navicat访问MySQL服务 报(Authentication plugin 'caching_sha2_password' cannot be loaded)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-10-17 16:58:57" itemprop="dateCreated datePublished" datetime="2019-10-17T16:58:57Z">2019-10-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-10-18 06:18:19" itemprop="dateModified" datetime="2019-10-18T06:18:19Z">2019-10-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ol>
+<li>本地操作系统: macOS Catalina 10.15</li>
+<li>本地MySQL 版本: 8.0.17</li>
+<li>服务器: Debian 10 (buster)</li>
+<li>服务器MySQL版本: 8.0.18</li>
+</ol>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>服务器新安装MySQL8发现在命令行可以正常链接访问而在NavicatPremium12中无法连接报错如下图  </p>
+<img src="/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/img_0.png" class="" title="img_0">  
+
+<span id="more"></span>
+
+<p><a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password">查阅资料</a>得知MySQL8的默认认证方式为<code>caching_sha2_password</code>而非之前的<code>mysql_native_password</code><br>而Navicat12并不支持这项改动 所以如果想要使用Navicat管理数据库时需要将MySQL默认认证方式改为mysql_native_password</p>
+<hr>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ul>
+<li><p>修改服务器MySQL默认认证方式 <code>/etc/mysql/mysql.conf.d/mysqld.cnf </code></p>
+<blockquote>
+<p>在此文件的[mysqld]节点下加入<br>    <code>default_authentication_plugin=mysql_native_password</code>  </p>
+</blockquote>
+</li>
+<li><p>进入mysql创建<code>root用户</code>(没错是root)且授权 (小声BB: 以下命令需要在服务器本地操作  :(  </p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p</span><br><span class="line">mysql&gt; use mysql;</span><br><span class="line">mysql&gt; CREATE USER &#x27;root&#x27;@&#x27;%&#x27;;</span><br><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &#x27;root&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
+
+  <img src="/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/img_1.png" class="" title="img_1">  
+
+<blockquote>
+<p>可以看到创建用户后该用户的登录认证方式依旧是<code>caching_sha2_password</code><br>  所以需要继续修改plugin  </p>
+</blockquote>
+</li>
+<li><p>修改用户的认证插件  </p>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; #修改密码#</span><br><span class="line">mysql&gt; ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;yourpassword&#x27;;</span><br><span class="line">mysql&gt; #修改认证插件#</span><br><span class="line">mysql&gt; ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFED WITH mysql_native_password BY &#x27;yourpassword&#x27;;</span><br><span class="line">mysql&gt; #刷新privileges#</span><br><span class="line">mysql&gt; FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+  <img src="/2019/10/18/cannot-access-mysql8-with-navicat-on-macos/img_2.png" class="" title="img_2">  
+
+</li>
+<li><p>注意: 此时的密码在确认时MySQL会根据安装强密码设置来判断是否合格 如果不小心设置了强密码 可以根据如下命令修改规则与长度 当然这边还是强烈建议使用强密码</p>
+<pre><code class="shell">mysql&gt; #设置强密码等级为LOW#
+mysql&gt; set global validate_password.policy=0;
+mysql&gt; #设置强密码长度#
+mysql&gt; set global validate_password.length=4;
+</code></pre>
+</li>
+<li><p>这时候可以看到刚创建的root用户的认证插件已经改好了  我们这时候再回到Navicat中测试就正常啦 <code>\(^o^)/</code></p>
+</li>
+</ul>
+<hr>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%BC%80%E5%8F%91/" rel="tag"># 开发</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/09/12/certbot-https-with-nginx-abc/" rel="prev" title="使用Certbot签发Https证书之Nginx">
+                  <i class="fa fa-chevron-left"></i> 使用Certbot签发Https证书之Nginx
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/10/24/daily-classic-joke-01/" rel="next" title="经典段子-黑牛还是白牛">
+                  经典段子-黑牛还是白牛 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NicolasKun</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":true},"log":false});</script></body>
+</html>

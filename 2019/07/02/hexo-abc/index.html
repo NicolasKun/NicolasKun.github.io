@@ -1,23 +1,417 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block page_class %}page-post-detail{% endblock %}
+<link rel="stylesheet" href="/css/main.css">
 
-{% block content %}
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"nicolaskun.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="确保系统安装好Node.js与Git      ## 安装与配置    安装Hexo   1$ npm install hexo-cli -g 指定某一文件夹为建站文件夹 使用在该目录下初始化站点1$ hexo init &lt;folder name&gt; 进入该目录 使用npm安装必要模块12$ cd &lt;folder name&gt;$ npm install 配置站点根目录下的_c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HexoABC">
+<meta property="og:url" content="https://nicolaskun.github.io/2019/07/02/hexo-abc/index.html">
+<meta property="og:site_name" content="菜鸡坤">
+<meta property="og:description" content="确保系统安装好Node.js与Git      ## 安装与配置    安装Hexo   1$ npm install hexo-cli -g 指定某一文件夹为建站文件夹 使用在该目录下初始化站点1$ hexo init &lt;folder name&gt; 进入该目录 使用npm安装必要模块12$ cd &lt;folder name&gt;$ npm install 配置站点根目录下的_c">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-07-02T09:55:34.000Z">
+<meta property="article:modified_time" content="2019-07-10T12:26:03.954Z">
+<meta property="article:author" content="NicolasKun">
+<meta property="article:tag" content="建站">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://nicolaskun.github.io/2019/07/02/hexo-abc/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://nicolaskun.github.io/2019/07/02/hexo-abc/","path":"2019/07/02/hexo-abc/","title":"HexoABC"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>HexoABC | 菜鸡坤</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style type="text/css">
+.spoiler {
+  display: inline-flex;
+}
+p.spoiler {
+  display: flex;
+}
+.spoiler a {
+  pointer-events: none;
+}
+.spoiler-blur, .spoiler-blur > * {
+  transition: text-shadow .5s ease;
+}
+.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
+  color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 10px grey;
+  cursor: pointer;
+}
+.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
+  text-shadow: 0 0 5px grey;
+}
+.spoiler-box, .spoiler-box > * {
+  transition: color .5s ease,
+  background-color .5s ease;
+}
+.spoiler .spoiler-box, .spoiler .spoiler-box > * {
+  color: black;
+  background-color: black;
+  text-shadow: none;
+}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
 
-{% endblock %}
+  <div class="site-meta">
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">菜鸡坤</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section">首页</a></li><li class="menu-item menu-item-archives"><a href="/archives" rel="section">归档</a></li><li class="menu-item menu-item-tags"><a href="/tags" rel="section">标签</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#END"><span class="nav-number">1.</span> <span class="nav-text">END</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">NicolasKun</p>
+  <div class="site-description" itemprop="description">常走弯路,才会有更多支线剧情与奖励</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://nicolaskun.github.io/2019/07/02/hexo-abc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="NicolasKun">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸡坤">
+      <meta itemprop="description" content="常走弯路,才会有更多支线剧情与奖励">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="HexoABC | 菜鸡坤">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HexoABC
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-07-02 09:55:34" itemprop="dateCreated datePublished" datetime="2019-07-02T09:55:34Z">2019-07-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2019-07-10 12:26:03" itemprop="dateModified" datetime="2019-07-10T12:26:03Z">2019-07-10</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>确保系统安装好Node.js与Git  </p>
+</blockquote>
+<hr>
+<span id="0">
+## 安装与配置
+</span>
+
+<ol>
+<li>安装Hexo   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install hexo-cli -g</span></span><br></pre></td></tr></table></figure></li>
+<li>指定某一文件夹为建站文件夹 使用在该目录下初始化站点<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo init &lt;folder name&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>进入该目录 使用npm安装必要模块<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> &lt;folder name&gt;</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">npm install</span></span><br></pre></td></tr></table></figure></li>
+<li>配置站点根目录下的_config.yml<br>设置网站标题 副标题 网站所属者<br>如果想增加搜索曝光率可以设置sitemap并提供给各大搜索引擎<ul>
+<li>Hexo有特殊的资源引用方式 比如图片可以不使用<code>[]()</code>方式加载</li>
+<li>在_config.yml中设置post_asset_folder: true开启此功能 具体使用在下一节</li>
+</ul>
+</li>
+</ol>
+<span id="more"></span>
+
+<hr>
+<span id="1">
+## 写作与预览
+</span>
+
+<ol>
+<li>使用 new 命令创建一篇新文章  <ul>
+<li>如果post_asset_folder处于开启模式 则创建文章后会生成文章资源目录 可以将外部的静态资源放入<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo new post &lt;title&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>使用Markdown写文章<ul>
+<li>使用命令创建的文章顶部会有默认的title, date与tag </li>
+<li>如果post_asset_folder处于开启模式 引用静态资源将使用如下格式</li>
+<li><span style="background-color: #eee;padding:2px 4px;overflow-wrap: break-word;word-wrap: break-word;border-radius: 3px;font-size: 14px;">&amp;#123;&amp;#37; asset_img(asset_path|asset_link) <relative_path> [width] [height] [desc] &amp;#37;&amp;#125;</span></li>
+<li>width height不能使用单位 也不能使用百分比 可以不设置</li>
+</ul>
+</li>
+<li>预览文章<ul>
+<li>按顺序执行如下命令</li>
+<li><code>hexo clean</code>  (清除已生成的静态页面)</li>
+<li><code>hexo generate</code> (生成静态页面)</li>
+<li><code>hexo server</code> (启动本地服务 默认端口为4000 在浏览器中访问localhost:4000预览刚写好的文章)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<span id="2">
+## 配置GitHub
+</span>
+
+<ol>
+<li>在自己的GitHub账户中新建一网站专用空仓库 可以不用初始化README.md<ul>
+<li>名称必须以<code>.github.io</code>结尾</li>
+</ul>
+</li>
+<li>将该仓库ssh路径配置在本地站点根目录的_config.yml中的deploy节点下  <ul>
+<li><code>type</code>设置git</li>
+<li><code>repo</code>设置刚刚仓库的ssh地址</li>
+<li><code>branch</code>默认master</li>
+</ul>
+</li>
+<li>在本地使用git生成公钥<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ssh-keygen -t rsa -C <span class="string">&quot;&lt;github registe email&gt;&quot;</span></span></span><br></pre></td></tr></table></figure></li>
+<li>将<code>3</code>步中拿到的公钥在GitHub个人设置中SSH and GPG keys中新建一站点专用<code>ssh key</code>名称随意</li>
+</ol>
+<hr>
+<span id="3">
+## 部署
+</span>
+
+<ol>
+<li>确认本地预览没有问题<br>GitHub SSH key 设置正确<br>_config.yml配置仓库正确</li>
+<li>按顺序执行如下命令<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo clean</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo generate</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">hexo deploy</span></span><br></pre></td></tr></table></figure></li>
+<li>接着访问之前设置的仓库名称即<code>&lt;repo_name&gt;.github.io</code></li>
+</ol>
+<hr>
+<span id="4">
+## 外观与个性化
+</span>
+
+<blockquote>
+<p>Hexo支持主题设置且社区拥有很多精美的自制主题可供使用</p>
+</blockquote>
+<ol>
+<li>下载主题到根目录下的themes&#x2F;</li>
+<li>在根目录下_config.yml的theme节点配置主题</li>
+<li>按需在<code>themes/&lt;theme&gt;/_config.yml</code>中配置属性</li>
+<li>重复<a href="#1">写作与预览</a>第三点中的三行命令 并预览</li>
+</ol>
+<hr>
+<h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%BB%BA%E7%AB%99/" rel="tag"># 建站</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/07/01/flutter-abc-0x00/" rel="prev" title="FlutterABC系列之一">
+                  <i class="fa fa-chevron-left"></i> FlutterABC系列之一
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/08/15/docker-exception-debian-buster/" rel="next" title="Debian10重启后Docker异常">
+                  Debian10重启后Docker异常 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NicolasKun</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"left","width":50,"height":100},"mobile":{"show":true},"log":false});</script></body>
+</html>
